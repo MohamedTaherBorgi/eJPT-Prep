@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Enumeration/SSH Enumeration & Exploitation.md",
+                "file": "Vulnerability Analysis/Pass-The-Hash Attacks.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SSH Enumeration & Exploitation"
+              "title": "Pass-The-Hash Attacks"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "psexec",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -185,6 +186,22 @@
   },
   "active": "5b558e121db2e227",
   "lastOpenFiles": [
+    "From Auditing to Penetration Testing/Linux Server Security Lifecycle.md",
+    "Governance, Risk & Compliance/Common Standards, Frameworks & Guidelines.md",
+    "From Auditing to Penetration Testing",
+    "Governance, Risk & Compliance/Governance, Risk & Compliance (GRC).md",
+    "Auditing Fundamentals/Example Sequential Audit & Pen Test.md",
+    "Governance, Risk & Compliance",
+    "Auditing Fundamentals/Security Auditing & Penetration Testing.md",
+    "Auditing Fundamentals/Types of Security Audits.md",
+    "Auditing Fundamentals/Introduction to Security Auditing.md",
+    "Auditing Fundamentals/Security Auditing Process & Lifecycle.md",
+    "Pasted image 20260204200842.png",
+    "Untitled.md",
+    "Nmap/Nmap Scripting Engine (NSE).md",
+    "Auditing Fundamentals",
+    "Information Gathering/Passive Information Gathering.md",
+    "Enumeration/SSH Enumeration & Exploitation.md",
     "Vulnerability Scanning/WMAP.md",
     "Vulnerability Scanning/With Nessus.md",
     "Vulnerability Scanning/With WMAP.md",
@@ -201,30 +218,15 @@
     "Vulnerability Analysis",
     "Information Gathering/Active Information Gathering.md",
     "Vulnerability Assessment/Vulnerability Scanning With MSF.md",
-    "Vulnerability Assessment/Frequently Exploited Windows Services.md",
-    "Enumeration/SMB Enumeration & Exploitation.md",
-    "Vulnerability Assessment/Overview of Windows Vulnerabilities.md",
     "Pen testing methodology.png",
-    "Enumeration/FTP Enumeration & Exploitation.md",
     "Vulnerability Assessment",
     "Scanning - Network Mapping.png",
     "OSI.png",
     "TCP vs UDP.png",
-    "Enumeration/SMTP Enumeration & Exploitation.md",
-    "Enumeration/SSH Enumeration & Exploitation.md",
-    "Enumeration/MySQL Enumeration & Exploitation.md",
-    "Evasion, Scan Performance & Output/Nmap Output Formats.md",
-    "Evasion, Scan Performance & Output/Slowing Down Nmap to Avoid Detection.md",
-    "Evasion, Scan Performance & Output/Firewall Detection and IDS Evasion with Nmap.md",
-    "Firewall Detection and IDS Evasion/Untitled.md",
     "Evasion, Scan Performance & Output",
-    "Nmap/Nmap Scripting Engine (NSE).md",
     "Firewall Detection and IDS Evasion",
     "Networking",
     "Metasploit",
-    "Nmap",
-    "Untitled.canvas",
-    "Infos",
-    "Enumeration"
+    "Untitled.canvas"
   ]
 }
