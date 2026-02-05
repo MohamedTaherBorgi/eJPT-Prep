@@ -294,3 +294,51 @@ Until then: **hash = key**.
 
 ---
 ---
+# Staged vs. Stageless Payload :
+### 1. Staged Payload (The "Two-Step")
+
+A staged payload is broken into two parts. It’s like sending a "scout" first to make sure the coast is clear before the "army" arrives.
+
+- **Stage 0 (The Stager):** A tiny piece of shellcode sent to the target. Its only job is to connect back to your machine and download the rest of the code.
+    
+- **Stage 1 (The Stage):** The heavy lifting code (like the full Meterpreter shell) that is pulled into memory after the connection is made.
+    
+
+> **Why use it?** > Perfect for **Buffer Overflows** where you only have a very small amount of space (e.g., 100 bytes) to inject code. The stager is small enough to fit; the full shell is not.
+
+---
+### 2. Stageless Payload (The "All-in-One")
+
+A stageless payload is a single, self-contained file. It contains everything it needs to give you a shell in one go.
+
+- **Fire and Forget:** It doesn't need to "call home" to download more code; it just executes its instructions immediately.
+    
+- **Size:** Much larger than a stager because the entire "army" is packed into the initial file.
+    
+
+> **Why use it?**
+> 
+> Better for **unstable networks** or high-latency environments. Since there's no "Stage 1" download, there’s less chance of the connection dropping halfway through the transfer.
+
+---
+### 🛠️ How to tell them apart in Metasploit
+
+Metasploit uses a very specific naming convention. **This is a common eJPT/OSCP knowledge point!**
+
+|**Type**|**Syntax Example**|**Identifier**|
+|---|---|---|
+|**Staged**|`windows/meterpreter/reverse_tcp`|Uses a **forward slash (`/`)** between the shell and the protocol.|
+|**Stageless**|`windows/meterpreter_reverse_tcp`|Uses an **underscore (`_`)** to join them into one name.|
+   
+---
+### ⚖️ Comparison at a Glance
+
+|**Feature**|**Staged**|**Stageless**|
+|---|---|---|
+|**Size**|Very Small (Stage 0)|Large (Full binary)|
+|**Stealth**|Harder to detect initially (small footprint).|Easier for AV to scan the whole file at once.|
+|**Reliability**|Can fail if the "Stage 1" download is blocked.|More reliable on poor network connections.|
+|**Best For...**|Exploiting small memory buffers.|USB drops, social engineering, or persistence.|
+
+---
+---

@@ -13,12 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Penetration testing/System Host Based Attacks/Windows/Windows Credential Dumping/Windows Password Hashes.md",
+                "file": "Penetration testing/System Host Based Attacks/Windows/Windows Credential Dumping/Dumping Hashes With Mimikatz.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Windows Password Hashes"
+              "title": "Dumping Hashes With Mimikatz"
+            }
+          },
+          {
+            "id": "bb79ac99f530ac46",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Infos/Must know.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Must know"
             }
           }
         ]
@@ -183,13 +197,19 @@
       "bases:Create new base": false
     }
   },
-  "active": "bb5e3b04c222b851",
+  "active": "d2a4051903bbcf85",
   "lastOpenFiles": [
+    "Penetration testing/System Host Based Attacks/Windows/Windows Credential Dumping/Windows Password Hashes.md",
+    "Penetration testing/System Host Based Attacks/Windows/Windows Credential Dumping/Dumping Hashes With Mimikatz.md",
+    "Metasploit/Auxiliary Modules.md",
+    "Infos/Must know.md",
+    "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting WebDAV With Metasploit.md",
+    "Penetration testing/System Host Based Attacks/Windows/Windows Credential Dumping/Passwords In Windows Configuration Files.md",
+    "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting SMB.md",
     "Penetration testing/System Host Based Attacks/Windows/Windows File System Vulnerabilities/Alternate_Data_Streams.mp4",
     "Penetration testing/System Host Based Attacks/Windows/Windows File System Vulnerabilities",
     "Untitled 1.canvas",
     "Untitled.canvas",
-    "Penetration testing/System Host Based Attacks/Windows/Windows Credential Dumping/Windows Password Hashes.md",
     "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting WinRM (Windows Remote Management Protocol).md",
     "Penetration testing/System Host Based Attacks/Windows/Windows Credential Dumping",
     "Penetration testing/System Host Based Attacks/Windows/Exploits",
@@ -197,8 +217,6 @@
     "Penetration testing/System Host Based Attacks/Windows/Windows File System Vulnerabilities/Untitled.md",
     "Penetration testing/System Host Based Attacks/Windows/Windows File System Vulnerabilities",
     "Penetration testing/System Host Based Attacks/Windows/Windows Priv Esc",
-    "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting SMB.md",
-    "Infos/Must know.md",
     "Vulnerability Assessment/Frequently Exploited Windows Services.md",
     "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting RDP.md",
     "Useful Linux commands/Metasploit commands.md",
@@ -207,7 +225,6 @@
     "Vulnerability Assessment/Frequently Exploited Linux Services.md",
     "Vulnerability Analysis/BlueKeep (CVE-2019-0708) (RDP).md",
     "Information Gathering and Enumeration/Information Gathering/Active Information Gathering.md",
-    "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting WebDAV With Metasploit.md",
     "governance and audit/Auditing Fundamentals/Security Auditing Process & Lifecycle.md",
     "README.md",
     "Pasted image 20260204200842.png",
@@ -217,13 +234,10 @@
     "Vulnerability Analysis/Shellshock (CVE-2014-6271) (Linux Systems).md",
     "Vulnerability Analysis/EternalBlue (MS17-010) (SMB).md",
     "Information Gathering and Enumeration/Enumeration/SMB Enumeration & Exploitation.md",
-    "Vulnerability Scanning/With Nessus.md",
-    "Vulnerability Scanning/WMAP.md",
     "Penetration testing/System Host Based Attacks/Linux",
     "Penetration testing/System Host Based Attacks/Windows",
     "Penetration testing/System Host Based Attacks",
     "Penetration testing",
-    "Information Gathering and Enumeration",
     "Pen testing methodology.png",
     "Scanning - Network Mapping.png",
     "OSI.png",
