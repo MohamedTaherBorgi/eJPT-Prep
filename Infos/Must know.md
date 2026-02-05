@@ -342,3 +342,16 @@ Metasploit uses a very specific naming convention. **This is a common eJPT/OSCP 
 
 ---
 ---
+## smbclient & Samba
+
+### Q: Is `smbclient` only for Linux Samba?
+**No.** It works against **any SMB server** — including **Windows**.
+
+### Q: Can I get a shell with `smbclient`?
+**No.** It’s a **file transfer tool**, not a command shell.  
+→ For remote execution, use:
+- `smbmap -x 'whoami'` (if admin)
+- `psexec.py` (via Impacket)
+
+---
+---

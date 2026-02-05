@@ -137,3 +137,78 @@ When you search for a term like `/-sS` in the manual, use these keys to naviga
 
 ---
 ---
+# 🔍 Nmap Script Discovery (NSE)
+
+To find specialized Nmap scripts for a specific protocol (like **FTP**, **SMB**, or **HTTP**), you can search your local script database using the command line.
+### 📁 Script Location
+On most Linux systems (Kali, Parrot, Ubuntu), Nmap scripts are stored here:
+`cd /usr/share/nmap/scripts/`
+
+---
+### 🛠️ Discovery Commands
+Use `ls` combined with `grep` to filter for the protocol you are interested in.
+#### General Search (Example: FTP)
+```Shell
+ls /usr/share/nmap/scripts/ | grep "ftp"
+```
+
+---
+---
+# How `searchsploit` Works – Deep Dive
+
+## What Is `searchsploit`?
+
+- **Command-line tool** from **Exploit-DB** (maintained by Offensive Security)
+- Searches a **local copy** of the **Exploit Database** (`/usr/share/exploitdb/`)
+- Returns **public exploits, PoCs, and auxiliary scripts**
+
+---
+## What Does It Return?
+
+✅ **Both**:
+- **Exploits** (RCE, LPE, DoS)
+- **Auxiliary scripts** (scanners, info-gatherers, fuzzers)
+
+ Example:  
+ ```bash
+ searchsploit "Microsoft Windows SMB" | grep -i metasploit
+ ```
+> May return:
+> - `exploits/windows/remote/42315.rb` → EternalBlue exploit  
+> - `auxiliary/scanner/smb/smb_ms17_010.rb` → EternalBlue scanner
+
+---
+## Where Does It Pull From?
+
+- **Local database**: `/usr/share/exploitdb/`
+  - Updated via: `searchsploit --update` or `sudo apt update && sudo apt install exploitdb`
+- **Source**: [https://www.exploit-db.com](https://www.exploit-db.com) — the world’s largest public exploit archive
+
+---
+## Key Notes
+| Question                                  | Answer                                                                      |
+| ----------------------------------------- | --------------------------------------------------------------------------- |
+| **Does it show only Metasploit modules?** | ❌ No — shows **all public exploits**, including Metasploit, Python, C, etc. |
+| **How to find Metasploit-specific ones?** | Use `grep -i metasploit` (as in your command)                               |
+| **Are auxiliary modules included?**       | ✅ Yes — if they’re in Exploit-DB (e.g., scanners, enum scripts)             |
+| **Is it real-time?**                      | ❌ Uses local cache — run `searchsploit -u` to update                        |
+#### Download to current directory with :
+```Shell
+searchsploit -m module_name
+```
+
+---
+---
+### Linux Enumeration (Post SSH)
+
+```bash
+whoami                    # Current user
+groups                    # Group memberships
+cat /etc/issue            # OS banner
+uname -a                  # Kernel version
+cat /etc/passwd           # List all users
+id                        # UID/GID info
+```
+
+---
+---
