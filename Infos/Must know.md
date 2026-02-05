@@ -270,3 +270,27 @@ Until then: **hash = key**.
 
 ---
 ---
+# What Is RPC?
+
+**RPC (Remote Procedure Call)** is a protocol that allows a program on one computer to **execute code on another machine** over a network — as if it were local.
+
+---
+## Key Facts
+
+- **Purpose**: Enable inter-process communication across systems (client ↔ server)
+- **Used by**: Windows (heavily), Linux, macOS
+- **Port**: Typically dynamic (TCP/UDP <u>135</u> for endpoint mapper + high ports), but can be fixed
+- **Authentication**: Uses **NTLM** or **Kerberos** → supports **Pass-the-Hash**
+
+---
+## How It Works (Windows Example)
+
+1. Client calls a function (e.g., `NetUserEnum`)
+2. RPC runtime **serializes** the request
+3. Sends it over network to target’s **RPC service**
+4. Target executes function and returns result
+
+> 🔧 Under the hood: RPC is used by **SMB**, **WMI**, **DCOM**, **MS-RPRN**, etc.
+
+---
+---

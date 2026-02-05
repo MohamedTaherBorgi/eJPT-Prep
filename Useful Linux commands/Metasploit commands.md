@@ -144,3 +144,53 @@ Press `Ctrl + Z` → type `y` when prompted.
 
 ---
 ---
+# `getuid` and Other Meterpreter Commands
+
+## Is `getuid` Only for Meterpreter?
+
+**Yes.**  
+
+`getuid` is a **Meterpreter-specific command** — it does **not exist** in regular shells (bash, cmd, PowerShell).
+
+It’s part of Meterpreter’s built-in post-exploitation API.
+
+---
+## Common Meterpreter Commands
+
+| Command | Purpose |
+|--------|--------|
+| `getuid` | Show current user context (e.g., `NT AUTHORITY\SYSTEM`) |
+| `sysinfo` | OS version, architecture, hostname |
+| `ps` | List running processes |
+| `migrate <PID>` | Move Meterpreter into another process |
+| `shell` | Drop to native OS shell (cmd/bash) |
+| `upload / download` | Transfer files |
+| `ipconfig` | Network interfaces |
+| `route` | View/add routing table entries |
+| `hashdump` | Dump SAM hashes (requires SYSTEM) |
+| `background` | Return to MSF console, keep session |
+
+> 💡 These only work **inside an active Meterpreter session**.
+
+---
+## How to Discover All Available Commands
+
+### 1. **In Meterpreter:**
+
+```msf
+meterpreter > help
+```
+
+→ Lists **all built-in commands** for your payload type (Windows/Linux, x86/x64).
+
+### 2. **Load Extensions:**
+
+Some commands come from **extensions**:
+```msf
+meterpreter > load kiwi          # Mimikatz-like creds dumping
+meterpreter > load espia         # Screen capture
+meterpreter > help               # Now shows new commands
+```
+
+---
+---
