@@ -1,6 +1,6 @@
 # 📁 eJPT Notes Vault
 
-A minimalist repository of notes and cheatsheets for the **eJPT** certification.
+A Repository of notes and cheatsheets for the **eJPT** certification.
 
 This repo is optimized for the **Obsidian** app because:
 
