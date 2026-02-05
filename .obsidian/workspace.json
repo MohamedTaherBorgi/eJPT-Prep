@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Penetration testing/System Host Based Attacks/Windows/Exploiting WinRM (Windows Remote Management Protocol).md",
+                "file": "Penetration testing/System Host Based Attacks/Windows/Windows Credential Dumping/Windows Password Hashes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Exploiting WinRM (Windows Remote Management Protocol)"
+              "title": "Windows Password Hashes"
             }
           }
         ]
@@ -183,20 +183,31 @@
       "bases:Create new base": false
     }
   },
-  "active": "d2a4051903bbcf85",
+  "active": "bb5e3b04c222b851",
   "lastOpenFiles": [
-    "Penetration testing/System Host Based Attacks/Windows/Exploiting SMB.md",
-    "Penetration testing/System Host Based Attacks/Windows/Exploiting WinRM (Windows Remote Management Protocol).md",
+    "Penetration testing/System Host Based Attacks/Windows/Windows File System Vulnerabilities/Alternate_Data_Streams.mp4",
+    "Penetration testing/System Host Based Attacks/Windows/Windows File System Vulnerabilities",
+    "Untitled 1.canvas",
+    "Untitled.canvas",
+    "Penetration testing/System Host Based Attacks/Windows/Windows Credential Dumping/Windows Password Hashes.md",
+    "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting WinRM (Windows Remote Management Protocol).md",
+    "Penetration testing/System Host Based Attacks/Windows/Windows Credential Dumping",
+    "Penetration testing/System Host Based Attacks/Windows/Exploits",
+    "Penetration testing/System Host Based Attacks/Windows/Windows Priv Esc/a.md",
+    "Penetration testing/System Host Based Attacks/Windows/Windows File System Vulnerabilities/Untitled.md",
+    "Penetration testing/System Host Based Attacks/Windows/Windows File System Vulnerabilities",
+    "Penetration testing/System Host Based Attacks/Windows/Windows Priv Esc",
+    "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting SMB.md",
     "Infos/Must know.md",
     "Vulnerability Assessment/Frequently Exploited Windows Services.md",
-    "Penetration testing/System Host Based Attacks/Windows/Exploiting RDP.md",
+    "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting RDP.md",
     "Useful Linux commands/Metasploit commands.md",
     "Vulnerability Analysis/Pass-The-Hash Attacks (SMB).md",
     "Vulnerability Assessment/Overview of Windows Vulnerabilities.md",
     "Vulnerability Assessment/Frequently Exploited Linux Services.md",
     "Vulnerability Analysis/BlueKeep (CVE-2019-0708) (RDP).md",
     "Information Gathering and Enumeration/Information Gathering/Active Information Gathering.md",
-    "Penetration testing/System Host Based Attacks/Windows/Exploiting WebDAV With Metasploit.md",
+    "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting WebDAV With Metasploit.md",
     "governance and audit/Auditing Fundamentals/Security Auditing Process & Lifecycle.md",
     "README.md",
     "Pasted image 20260204200842.png",
@@ -208,24 +219,14 @@
     "Information Gathering and Enumeration/Enumeration/SMB Enumeration & Exploitation.md",
     "Vulnerability Scanning/With Nessus.md",
     "Vulnerability Scanning/WMAP.md",
-    "Vulnerability Assessment/WebDAV Vulnerabilities.md",
-    "Untitled.md",
-    "Vulnerability Assessment/Vulnerability Scanning With MSF.md",
-    "Metasploit/Auxiliary Modules.md",
     "Penetration testing/System Host Based Attacks/Linux",
     "Penetration testing/System Host Based Attacks/Windows",
     "Penetration testing/System Host Based Attacks",
     "Penetration testing",
     "Information Gathering and Enumeration",
-    "Nmap Evasion, Scanning and NSE",
-    "governance and audit",
-    "governance and audit/From Auditing to Penetration Testing/From_Policy_to_Pentest.mp4",
-    "governance and audit/From Auditing to Penetration Testing",
-    "governance and audit/Governance, Risk & Compliance",
     "Pen testing methodology.png",
     "Scanning - Network Mapping.png",
     "OSI.png",
-    "TCP vs UDP.png",
-    "Untitled.canvas"
+    "TCP vs UDP.png"
   ]
 }
