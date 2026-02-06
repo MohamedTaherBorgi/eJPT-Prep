@@ -355,3 +355,193 @@ Metasploit uses a very specific naming convention. **This is a common eJPT/OSCP 
 
 ---
 ---
+# Admin vs. High-Integrity Admin – What’s the Difference?
+
+## 🔑 Short Answer:
+
+- **Being in the Administrators group ≠ having admin privileges at runtime**
+- **"High-integrity admin" = actual elevated privileges**
+- **Regular admin session = unelevated (medium integrity)**
+
+---
+## 🧠 Windows Integrity Levels (IL)
+
+Windows uses **Mandatory Integrity Control (MIC)** to enforce privilege boundaries:
+
+| Integrity Level | Typical Context |
+|----------------|----------------|
+| **Low** | Internet Explorer Protected Mode, sandboxed apps |
+| **Medium** | Standard user, **unelevated admin** |
+| **High** | **Elevated admin** (after UAC approval) |
+| **System** | OS services (`NT AUTHORITY\SYSTEM`) |
+
+> ✅ **Key Insight**:  
+> Even if you’re an **Administrator**, your processes start at **Medium IL** until you **explicitly elevate**.
+
+---
+## 🛡️ UAC in Action
+### Scenario: You’re logged in as `admin` (member of Administrators group)
+
+| Action | Integrity Level | Privileges |
+|-------|------------------|-----------|
+| Open `cmd.exe` normally | Medium | Cannot modify system files, install software, etc. |
+| Right-click → “Run as administrator” | High | Full admin rights (after UAC prompt) |
+
+> 💥 **Without elevation**:  
+> - `net user test /add` → **Access denied**  
+> - `whoami /groups` → shows `Mandatory Label\Medium Mandatory Level`
+
+> ✅ **After elevation**:  
+> - Same command → **Success**  
+> - `whoami /groups` → shows `Mandatory Label\High Mandatory Level`
+
+---
+## 🔍 In Your Meterpreter Session
+
+- **Initial session**: `VICTIM\admin` with **Medium IL**  
+  → Can’t run admin commands (e.g., `net user`, modify `C:\Windows`)
+- **After UAC bypass**: New session with **High IL**  
+  → Can run **all admin commands** without UAC prompts
+
+> ⚠️ **Important**:  
+> - Both sessions show `getuid => VICTIM\admin`  
+> - But **integrity level** (not username) determines what you can do  
+> - Use `getprivs` or `whoami /priv` to see actual privileges
+
+---
+## 🧪 How to Check Integrity Level
+
+In a shell:
+```cmd
+whoami /groups | findstr "Mandatory"
+```
+- `Medium Mandatory Level` → **not elevated**  
+- `High Mandatory Level` → **elevated admin**
+
+In Meterpreter:
+```msf
+getprivs
+```
+→ Elevated sessions show privileges like:
+- `SeDebugPrivilege`
+- `SeTakeOwnershipPrivilege`
+- `SeBackupPrivilege`
+
+---
+## 🔒 Why This Matters
+
+- **UAC is a runtime gatekeeper**, not just a group membership check
+- **Malware must bypass UAC** to gain real admin power — even with admin credentials
+- **Penetration testers** must escalate from **medium → high integrity** to perform privileged actions
+
+> 🔥 **Bottom line**:  
+> **Admin group = potential**  
+> **High integrity = actual power**
+
+---
+---
+# Why Migrate to `NT AUTHORITY\SYSTEM` After UAC Bypass?
+
+## 🔑 Short Answer:
+
+**Elevated admin ≠ SYSTEM**  
+Even with **high-integrity admin rights**, you are still limited by the **user context**.  
+`NT AUTHORITY\SYSTEM` is the **highest privilege** in Windows — above even local Administrators.
+
+---
+## 🧠 Key Differences
+
+| Context                               | Integrity Level | Token Privileges                                            | Capabilities                                                                                      |
+| ------------------------------------- | --------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| **Unelevated Admin**                  | Medium          | Limited (e.g., no `SeDebugPrivilege`)                       | Cannot access LSASS, modify system files                                                          |
+| **Elevated Admin** (after UAC bypass) | High            | Full admin privileges (`SeTakeOwnership`, `SeBackup`, etc.) | Can install software, modify most files, dump SAM                                                 |
+| **NT AUTHORITY\SYSTEM**               | System          | **All privileges enabled** + kernel-level access            | Full control: read **all memory**, impersonate **any user**, access **LSASS**, disable **AV/EDR** |
+
+> ✅ **UAC bypass gets you elevated admin → migrate to SYSTEM for full OS control**
+
+---
+## 🔍 Why You Still Need SYSTEM
+
+### 1. **Credential Access**
+- Only **SYSTEM** can read **LSASS memory** → extract **plaintext passwords**, **hashes**, **Kerberos tickets**
+- Tools like Mimikatz/Kiwi **require SYSTEM**
+
+### 2. **Persistence & Defense Evasion**
+- Many persistence mechanisms (e.g., **service creation**, **WMI event subscriptions**) work best as SYSTEM
+- Some EDRs restrict even elevated admins — but rarely block SYSTEM
+
+### 3. **Lateral Movement**
+- To dump **domain hashes** from a Domain Controller, you need **SYSTEM** to access `NTDS.dit`
+- Pass-the-Hash/Ticket attacks often require **full token control**
+
+### 4. **Process Access**
+- Some critical processes (e.g., `lsass.exe`, `winlogon.exe`) only allow **SYSTEM** to open them
+- Without SYSTEM, you **cannot migrate** into them or dump their memory
+
+---
+## 🛠️ Practical Example
+After UAC bypass:
+```msf
+meterpreter > getuid
+Server username: VICTIM\admin          # ← Still a user account
+meterpreter > getprivs
+... SeDebugPrivilege ...              # ← Elevated, but not SYSTEM
+```
+
+After migrating to `lsass.exe`:
+```msf
+meterpreter > migrate 688             # lsass PID
+meterpreter > getuid
+Server username: NT AUTHORITY\SYSTEM   # ← Kernel-level trust
+meterpreter > load kiwi
+meterpreter > creds_all               # ← Now works!
+```
+
+---
+## 💡 Summary
+- **UAC bypass** = escape user sandbox → gain **admin power**
+- **Migrate to SYSTEM** = gain **OS kernel trust** → unlock **full post-exploitation**
+
+> 🔥 **Admin lets you *use* the system. SYSTEM lets you *own* it.**
+
+---
+---
+# SAM vs. LSASS.EXE
+
+### ✅ **Elevated Admin CAN dump the SAM database** 
+
+- The **SAM file** (`C:\Windows\System32\config\SAM`) is protected, but an **elevated admin** (high integrity) has the privileges (`SeBackupPrivilege`, `SeTakeOwnershipPrivilege`) to:
+  - Take ownership of the SAM file
+  - Read it directly from disk
+  - Extract **NTLM hashes** offline (e.g., with `secretsdump.py`)
+
+> 🔑 So yes: **UAC bypass → elevated admin → can dump SAM hashes**
+
+---
+### ❌ **But Elevated Admin CANNOT read LSASS memory directly**
+- **LSASS.exe** runs as **NT AUTHORITY\SYSTEM**
+- Even elevated admins **cannot open LSASS process memory** by default due to:
+  - **Protected Process Light (PPL)** on modern Windows
+  - **Access restrictions**: Only SYSTEM (or kernel) can read LSASS memory
+- Tools like **Mimikatz** require **SYSTEM** to run `sekurlsa::logonpasswords`
+
+> 🔥 So: **Only SYSTEM can extract plaintext passwords, Kerberos tickets, or live session credentials from LSASS**
+
+---
+### 🧠 Summary Table
+
+| Action                                           | Requires                                                   |
+| ------------------------------------------------ | ---------------------------------------------------------- |
+| **Dump SAM hashes from disk**                    | ✅ Elevated Admin (High IL)                                 |
+| **Read LSASS memory (plaintext creds, tickets)** | ❌ Requires **NT AUTHORITY\SYSTEM**                         |
+| **Use `hashdump` in Meterpreter**                | ✅ Works with **elevated admin** (uses registry/SAM backup) |
+| **Use `sekurlsa::logonpasswords`**               | ❌ Requires **NT AUTHORITY\SYSTEM**                         |
+
+> 💡 In practice:  
+> - **UAC bypass** → get **SAM hashes** → crack or Pass-the-Hash  
+> - **Migrate to SYSTEM** → get **plaintext passwords & tickets** → Golden Ticket, lateral movement
+
+So your observation is correct — **elevated admin can dump SAM**, but **not LSASS**. The two are fundamentally different attack surfaces.
+
+---
+---

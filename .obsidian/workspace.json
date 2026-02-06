@@ -13,16 +13,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
-                "mode": "source",
+                "file": "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Bypassing UAC with UACMe.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Bypassing UAC with UACMe"
             }
           },
           {
-            "id": "1fba4c31d8a74d81",
+            "id": "26fb97cb97637683",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -36,17 +36,17 @@
             }
           },
           {
-            "id": "0840bce1fcb84954",
+            "id": "9a1e3af32dbd8326",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Information Gathering and Enumeration/Enumeration/SMB Enumeration & Exploitation.md",
+                "file": "Infos/Must know.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SMB Enumeration & Exploitation"
+              "title": "Must know"
             }
           }
         ]
@@ -211,37 +211,38 @@
       "bases:Create new base": false
     }
   },
-  "active": "3c68bc0f0e4061ac",
+  "active": "bb5e3b04c222b851",
   "lastOpenFiles": [
-    "Untitled 1.canvas",
+    "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Bypassing UAC with UACMe.md",
+    "Infos/Must know.md",
+    "Here.md",
+    "().md",
+    "Penetration testing/System Host Based Attacks/Windows/Windows Credential Dumping/Dumping Hashes With Mimikatz.md",
+    "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting SMB.md",
+    "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting WebDAV With Metasploit.md",
+    "Vulnerability Assessment/Frequently Exploited Linux Services.md",
+    "Penetration testing/System Host Based Attacks/Linux/Exploits/FTP.md",
+    "Information Gathering and Enumeration/Enumeration/FTP Enumeration & Exploitation.md",
+    "Useful Linux commands/Metasploit commands.md",
     "README.md",
-    "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Untitled.md",
+    "Untitled 1.canvas",
     "Untitled.canvas",
     "[Pass-The-Hash Attacks.md",
     "Penetration testing/System Host Based Attacks/Linux/Exploits/SAMBA.md",
     "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation",
     "Information Gathering and Enumeration/Enumeration/SMB Enumeration & Exploitation.md",
-    "Infos/Must know.md",
     "Penetration testing/System Host Based Attacks/Linux/Exploits/SSH.md",
     "Useful Linux commands/Commands.md",
-    "Penetration testing/System Host Based Attacks/Linux/Exploits/FTP.md",
     "Information Gathering and Enumeration/Enumeration/SSH Enumeration & Exploitation.md",
-    "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting WebDAV With Metasploit.md",
     "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting RDP.md",
     "Vulnerability Assessment/Vulnerability Scanning With MSF.md",
-    "Vulnerability Assessment/Frequently Exploited Linux Services.md",
-    "Information Gathering and Enumeration/Enumeration/FTP Enumeration & Exploitation.md",
     "Information Gathering and Enumeration/Enumeration/Web Server Enumeration & Exploitation.md",
     "Vulnerability Analysis/EternalBlue (MS17-010) (SMB).md",
     "Vulnerability Analysis/BlueKeep (CVE-2019-0708) (RDP).md",
     "Vulnerability Analysis/Shellshock (CVE-2014-6271) (Linux Systems).md",
     "Penetration testing/System Host Based Attacks/Linux/Exploits/re Shellshock (CVE-2014-6271) (Linux Systems).md",
     "Penetration testing/System Host Based Attacks/Linux/Exploits/re Frequently Exploited Linux Services.md",
-    "Networking/Network Protocols & The OSI Model.md",
     "Penetration testing/System Host Based Attacks/Linux/Exploits",
-    "Penetration testing/System Host Based Attacks/Windows/Windows Credential Dumping/Pass-The-Hash Attacks.md",
-    "Vulnerability Analysis/Pass-The-Hash Attacks (SMB).md",
-    "Penetration testing/System Host Based Attacks/Windows/Windows Credential Dumping/Windows Password Hashes.md",
     "Penetration testing/System Host Based Attacks/Windows/Windows File System Vulnerabilities/Alternate_Data_Streams.mp4",
     "Penetration testing/System Host Based Attacks/Windows/Windows File System Vulnerabilities",
     "Penetration testing/System Host Based Attacks/Windows/Windows Credential Dumping",
