@@ -1,5 +1,7 @@
 For all confusions during this lab check :
 [[Must know#Admin vs. High-Integrity Admin – What’s the Difference?]]
+[[Must know#Why Migrate to `NT AUTHORITY SYSTEM` After UAC Bypass?]]
+[[Must know#SAM vs. LSASS.EXE]]
 # Bypassing UAC with UACMe – Clear & Technical Breakdown
 
 ## 🔐 What Is UAC?

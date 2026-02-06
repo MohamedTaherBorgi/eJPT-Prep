@@ -4,49 +4,33 @@
     "type": "split",
     "children": [
       {
-        "id": "8d810d834457370a",
+        "id": "6f6c60e5fcab6268",
         "type": "tabs",
         "children": [
           {
-            "id": "3c68bc0f0e4061ac",
+            "id": "ec8166a7a701e3af",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Bypassing UAC with UACMe.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Bypassing UAC with UACMe"
-            }
-          },
-          {
-            "id": "26fb97cb97637683",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Infos/Must know.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Must know"
-            }
-          },
-          {
-            "id": "9a1e3af32dbd8326",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Infos/Must know.md",
+                "file": "Useful Linux commands/Commands.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Must know"
+              "title": "Commands"
+            }
+          },
+          {
+            "id": "b43db01da2ea9a70",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.11.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.11.7"
             }
           }
         ]
@@ -211,19 +195,25 @@
       "bases:Create new base": false
     }
   },
-  "active": "bb5e3b04c222b851",
+  "active": "ec8166a7a701e3af",
   "lastOpenFiles": [
+    "Useful Linux commands/Metasploit commands.md",
+    "Vulnerability Assessment/Frequently Exploited Linux Services.md",
+    "Penetration testing/System Host Based Attacks/Linux/Linux Privilege Escalation/Untitled.md",
+    "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Confusions.md",
+    "Penetration testing/System Host Based Attacks/Linux/Linux Privilege Escalation",
+    "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Windows Access Token Impersonation.md",
+    "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Windows Kernel Exploitation.md",
     "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Bypassing UAC with UACMe.md",
+    "Metasploit/Auxiliary Modules.md",
     "Infos/Must know.md",
     "Here.md",
     "().md",
     "Penetration testing/System Host Based Attacks/Windows/Windows Credential Dumping/Dumping Hashes With Mimikatz.md",
     "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting SMB.md",
     "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting WebDAV With Metasploit.md",
-    "Vulnerability Assessment/Frequently Exploited Linux Services.md",
     "Penetration testing/System Host Based Attacks/Linux/Exploits/FTP.md",
     "Information Gathering and Enumeration/Enumeration/FTP Enumeration & Exploitation.md",
-    "Useful Linux commands/Metasploit commands.md",
     "README.md",
     "Untitled 1.canvas",
     "Untitled.canvas",
@@ -237,11 +227,6 @@
     "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting RDP.md",
     "Vulnerability Assessment/Vulnerability Scanning With MSF.md",
     "Information Gathering and Enumeration/Enumeration/Web Server Enumeration & Exploitation.md",
-    "Vulnerability Analysis/EternalBlue (MS17-010) (SMB).md",
-    "Vulnerability Analysis/BlueKeep (CVE-2019-0708) (RDP).md",
-    "Vulnerability Analysis/Shellshock (CVE-2014-6271) (Linux Systems).md",
-    "Penetration testing/System Host Based Attacks/Linux/Exploits/re Shellshock (CVE-2014-6271) (Linux Systems).md",
-    "Penetration testing/System Host Based Attacks/Linux/Exploits/re Frequently Exploited Linux Services.md",
     "Penetration testing/System Host Based Attacks/Linux/Exploits",
     "Penetration testing/System Host Based Attacks/Windows/Windows File System Vulnerabilities/Alternate_Data_Streams.mp4",
     "Penetration testing/System Host Based Attacks/Windows/Windows File System Vulnerabilities",
@@ -251,7 +236,6 @@
     "Penetration testing/System Host Based Attacks/Windows/Windows Priv Esc",
     "Pasted image 20260204200842.png",
     "Penetration testing/System Host Based Attacks/Linux",
-    "Penetration testing/System Host Based Attacks/Windows",
     "Pen testing methodology.png",
     "Scanning - Network Mapping.png",
     "OSI.png",

