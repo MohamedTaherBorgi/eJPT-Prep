@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "6f6c60e5fcab6268",
+        "id": "6319a5a82cfb6ef1",
         "type": "tabs",
         "children": [
           {
-            "id": "ec8166a7a701e3af",
+            "id": "4497120876257636",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Penetration testing/System Host Based Attacks/Linux/Linux Privilege Escalation/Exploiting Misconfigured Cron Jobs.md",
-                "mode": "preview",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Exploiting Misconfigured Cron Jobs"
+              "title": "New tab"
             }
           }
         ]
@@ -183,10 +179,15 @@
       "bases:Create new base": false
     }
   },
-  "active": "ec8166a7a701e3af",
+  "active": "4497120876257636",
   "lastOpenFiles": [
-    "Penetration testing/System Host Based Attacks/Linux/Linux Privilege Escalation/Linux Kernel Exploitation.md",
+    "Untitled.canvas",
+    "Penetration testing/System Host Based Attacks/Linux/Linux Credential Dumping/Dumping Linux Password Hashes.md",
+    "Penetration testing/Network-Based Attacks",
+    "Penetration testing/System Host Based Attacks/Linux/Linux Privilege Escalation/Exploiting SUID Binaries.md",
+    "Penetration testing/System Host Based Attacks/Linux/Linux Credential Dumping",
     "Penetration testing/System Host Based Attacks/Linux/Linux Privilege Escalation/Exploiting Misconfigured Cron Jobs.md",
+    "Penetration testing/System Host Based Attacks/Linux/Linux Privilege Escalation/Linux Kernel Exploitation.md",
     "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Bypassing UAC with UACMe.md",
     "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Windows Access Token Impersonation.md",
     "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Windows Kernel Exploitation.md",
@@ -206,24 +207,18 @@
     "Information Gathering and Enumeration/Enumeration/FTP Enumeration & Exploitation.md",
     "README.md",
     "Untitled 1.canvas",
-    "Untitled.canvas",
     "[Pass-The-Hash Attacks.md",
     "Penetration testing/System Host Based Attacks/Linux/Exploits/SAMBA.md",
     "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation",
     "Information Gathering and Enumeration/Enumeration/SMB Enumeration & Exploitation.md",
     "Penetration testing/System Host Based Attacks/Linux/Exploits/SSH.md",
-    "Information Gathering and Enumeration/Enumeration/SSH Enumeration & Exploitation.md",
-    "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting RDP.md",
-    "Vulnerability Assessment/Vulnerability Scanning With MSF.md",
     "Penetration testing/System Host Based Attacks/Linux/Exploits",
     "Penetration testing/System Host Based Attacks/Windows/Windows File System Vulnerabilities/Alternate_Data_Streams.mp4",
     "Penetration testing/System Host Based Attacks/Windows/Windows File System Vulnerabilities",
     "Penetration testing/System Host Based Attacks/Windows/Windows Credential Dumping",
     "Penetration testing/System Host Based Attacks/Windows/Exploits",
     "Penetration testing/System Host Based Attacks/Windows/Windows File System Vulnerabilities",
-    "Penetration testing/System Host Based Attacks/Windows/Windows Priv Esc",
     "Pasted image 20260204200842.png",
-    "Penetration testing/System Host Based Attacks/Linux",
     "Pen testing methodology.png",
     "Scanning - Network Mapping.png",
     "OSI.png",
