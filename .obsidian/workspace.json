@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "1dc9b60a9e846eb7",
+        "id": "362711d9112d9a19",
         "type": "tabs",
         "children": [
           {
-            "id": "452cce7c14413d55",
+            "id": "635ee7c092d2d08c",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Payloads/Msfvenom generating and encoding and injecting payloads.md",
+                "mode": "preview",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Msfvenom generating and encoding and injecting payloads"
             }
           }
         ]
@@ -179,12 +183,33 @@
       "bases:Create new base": false
     }
   },
-  "active": "452cce7c14413d55",
+  "active": "635ee7c092d2d08c",
   "lastOpenFiles": [
+    "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Bypassing UAC with UACMe.md",
+    "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Confusions.md",
+    "Payloads/Msfvenom generating and encoding and injecting payloads.md",
+    "Vulnerability Scanning/WMAP.md",
+    "Payloads",
+    "Vulnerability Scanning/Vulnerability Scanning With MSF.md",
+    "Information Gathering and Enumeration/Enumeration/MySQL Enumeration & Exploitation.md",
+    "Information Gathering and Enumeration/Enumeration/Web Server Enumeration & Exploitation.md",
+    "Infos/Must know.md",
+    "Useful Linux commands/Commands.md",
+    "Metasploit/Metasploit Stageless & Staged Payloads.md",
+    "Metasploit/mshta.exe Staged Payload.md",
+    "Penetration Testing Phases.png",
+    "Metasploit/What Is run autoroute in Meterpreter.md",
+    "Metasploit/Staged vs Stageless Payloads Confusions.md",
+    "Pasted image 20260204200842.png",
+    "TCP vs UDP.png",
+    "OSI.png",
+    "Scanning - Network Mapping.png",
+    "Pen testing methodology.png",
+    "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting WebDAV With Metasploit.md",
+    "2026-02-08.md",
+    "Untitled.canvas",
     "Networking/SMB Relay Attack.md",
     "Networking/SNMP Enumeration.md",
-    "Metasploit/What Is run autoroute in Meterpreter.md",
-    "Useful Linux commands/Commands.md",
     "Metasploit/Auxiliary Modules.md",
     "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting SMB.md",
     "Information Gathering and Enumeration/Enumeration/SMB Enumeration & Exploitation.md",
@@ -192,37 +217,17 @@
     "Untitled.md",
     "Untitled 1.base",
     "Untitled.base",
-    "OSI.png",
-    "TCP vs UDP.png",
-    "Pasted image 20260204200842.png",
-    "Untitled.canvas",
     "Penetration testing/System Host Based Attacks/Windows/Windows Credential Dumping/Passwords In Windows Configuration Files.md",
-    "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting WebDAV With Metasploit.md",
     "Penetration testing/System Host Based Attacks/Linux/Linux Credential Dumping/Dumping Linux Password Hashes.md",
     "Penetration testing/Network-Based Attacks",
     "Penetration testing/System Host Based Attacks/Linux/Linux Privilege Escalation/Exploiting SUID Binaries.md",
     "Penetration testing/System Host Based Attacks/Linux/Linux Credential Dumping",
     "Penetration testing/System Host Based Attacks/Linux/Linux Privilege Escalation/Exploiting Misconfigured Cron Jobs.md",
-    "Penetration testing/System Host Based Attacks/Linux/Linux Privilege Escalation/Linux Kernel Exploitation.md",
-    "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Bypassing UAC with UACMe.md",
-    "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Windows Access Token Impersonation.md",
-    "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Windows Kernel Exploitation.md",
-    "Useful Linux commands/Metasploit commands.md",
-    "Vulnerability Assessment/Frequently Exploited Linux Services.md",
-    "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Confusions.md",
     "Penetration testing/System Host Based Attacks/Linux/Linux Privilege Escalation",
-    "Infos/Must know.md",
-    "Here.md",
-    "().md",
-    "Penetration testing/System Host Based Attacks/Windows/Windows Credential Dumping/Dumping Hashes With Mimikatz.md",
-    "Penetration testing/System Host Based Attacks/Linux/Exploits/FTP.md",
     "Untitled 1.canvas",
     "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation",
     "Penetration testing/System Host Based Attacks/Linux/Exploits",
     "Penetration testing/System Host Based Attacks/Windows/Windows File System Vulnerabilities/Alternate_Data_Streams.mp4",
-    "Penetration testing/System Host Based Attacks/Windows/Windows File System Vulnerabilities",
-    "Penetration testing/System Host Based Attacks/Windows/Windows Credential Dumping",
-    "Pen testing methodology.png",
-    "Scanning - Network Mapping.png"
+    "Penetration testing/System Host Based Attacks/Windows/Windows File System Vulnerabilities"
   ]
 }

@@ -545,3 +545,18 @@ So your observation is correct — **elevated admin can dump SAM**, but **not LS
 
 ---
 ---
+When you're doing web directory enumeration (using tools like `gobuster`, `ffuf`, or `dirb`) :
+
+### The Cheat Sheet
+
+| **Code**             | **Meaning**      | **What it means for a Pentester**                                                                                 |
+| -------------------- | ---------------- | ----------------------------------------------------------------------------------------------------------------- |
+| **200 OK**           | **Success**      | The door is open! You found a valid file or folder.                                                               |
+| **404 Not Found**    | **Missing**      | There is nothing here. Move on to the next word in your list.                                                     |
+| **401 Unauthorized** | **Locked**       | The door exists, but you need a key (password/token) to enter. **This is a great target.**                        |
+| **403 Forbidden**    | **No Entry**     | The door exists, but the server is told never to let you in (often due to IP whitelisting or folder permissions). |
+| **301 / 302**        | **Redirect**     | You're being sent to a different door. (e.g., `/admin` redirects to `/admin/login.php`).                          |
+| **500 Error**        | **Server Crash** | You broke something. Sometimes sending a weird character in the URL causes the code to fail.                      |
+
+---
+---
