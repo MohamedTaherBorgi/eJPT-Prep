@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Payloads/Msfvenom generating and encoding and injecting payloads.md",
-                "mode": "preview",
+                "file": "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting WinRM (Windows Remote Management Protocol).md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Msfvenom generating and encoding and injecting payloads"
+              "title": "Exploiting WinRM (Windows Remote Management Protocol)"
             }
           }
         ]
@@ -185,9 +185,11 @@
   },
   "active": "635ee7c092d2d08c",
   "lastOpenFiles": [
+    "Vulnerability Analysis/EternalBlue (MS17-010) (SMB).md",
+    "Information Gathering and Enumeration/Enumeration/FTP Enumeration & Exploitation.md",
+    "Payloads/Msfvenom generating and encoding and injecting payloads.md",
     "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Bypassing UAC with UACMe.md",
     "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Confusions.md",
-    "Payloads/Msfvenom generating and encoding and injecting payloads.md",
     "Vulnerability Scanning/WMAP.md",
     "Payloads",
     "Vulnerability Scanning/Vulnerability Scanning With MSF.md",
@@ -220,9 +222,7 @@
     "Penetration testing/System Host Based Attacks/Windows/Windows Credential Dumping/Passwords In Windows Configuration Files.md",
     "Penetration testing/System Host Based Attacks/Linux/Linux Credential Dumping/Dumping Linux Password Hashes.md",
     "Penetration testing/Network-Based Attacks",
-    "Penetration testing/System Host Based Attacks/Linux/Linux Privilege Escalation/Exploiting SUID Binaries.md",
     "Penetration testing/System Host Based Attacks/Linux/Linux Credential Dumping",
-    "Penetration testing/System Host Based Attacks/Linux/Linux Privilege Escalation/Exploiting Misconfigured Cron Jobs.md",
     "Penetration testing/System Host Based Attacks/Linux/Linux Privilege Escalation",
     "Untitled 1.canvas",
     "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation",
