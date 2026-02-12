@@ -8,35 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "635ee7c092d2d08c",
+            "id": "bb8dca2c65e94b72",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Useful Linux commands/Metasploit commands.md",
-                "mode": "source",
+                "file": "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Confusions.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Metasploit commands"
-            }
-          },
-          {
-            "id": "3ff9fd41f5a2a778",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Infos/Must know.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Must know"
+              "title": "Confusions"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -198,51 +183,51 @@
       "bases:Create new base": false
     }
   },
-  "active": "3ff9fd41f5a2a778",
+  "active": "bb8dca2c65e94b72",
   "lastOpenFiles": [
-    "Useful Linux commands/Metasploit commands.md",
     "Penetration testing/System Host Based Attacks/Linux/Exploits/FTP.md",
+    "Post Exploitation/Windows/Pivoting.md",
+    "Post Exploitation/Windows/Clearing Windows Event Logs.md",
+    "Post Exploitation/Windows/Keylogging.md",
+    "Post Exploitation/Windows/Enabling RDP.md",
+    "Post Exploitation/Windows/Persistence.md",
+    "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Bypassing UAC with UACMe.md",
     "Infos/Must know.md",
+    "Post Exploitation/Windows/Modules & Commands.md",
+    "Metasploit/Meterpreter/Search.md",
+    "Post Exploitation/Linux",
+    "Post Exploitation/Windows",
+    "Post Exploitation",
+    "Useful Linux commands/Metasploit commands.md",
+    "Information Gathering and Enumeration/Enumeration/FTP Enumeration & Exploitation.md",
     "Vulnerability Assessment/Frequently Exploited Linux Services.md",
+    "Penetration testing/System Host Based Attacks/Linux/Linux Privilege Escalation/Exploiting Misconfigured Cron Jobs.md",
+    "Metasploit/Auxiliary Modules.md",
+    "Penetration testing/System Host Based Attacks/Linux/Exploits/SAMBA.md",
+    "Metasploit/Meterpreter",
     "Penetration testing/System Host Based Attacks/Linux/Exploits/re Frequently Exploited Linux Services.md",
     "Penetration testing/System Host Based Attacks/Linux/Exploits/re Shellshock (CVE-2014-6271) (Linux Systems).md",
     "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting Apache Tomcat.md",
     "Metasploit/MSF Resource Scripts – Automation.md",
     "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting WinRM (Windows Remote Management Protocol).md",
     "Vulnerability Analysis/EternalBlue (MS17-010) (SMB).md",
-    "Information Gathering and Enumeration/Enumeration/FTP Enumeration & Exploitation.md",
     "Payloads/Msfvenom generating and encoding and injecting payloads.md",
-    "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Bypassing UAC with UACMe.md",
     "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Confusions.md",
     "Vulnerability Scanning/WMAP.md",
     "Payloads",
     "Vulnerability Scanning/Vulnerability Scanning With MSF.md",
-    "Information Gathering and Enumeration/Enumeration/MySQL Enumeration & Exploitation.md",
-    "Information Gathering and Enumeration/Enumeration/Web Server Enumeration & Exploitation.md",
-    "Useful Linux commands/Commands.md",
-    "Metasploit/Metasploit Stageless & Staged Payloads.md",
-    "Metasploit/mshta.exe Staged Payload.md",
     "Penetration Testing Phases.png",
-    "Metasploit/What Is run autoroute in Meterpreter.md",
-    "Metasploit/Staged vs Stageless Payloads Confusions.md",
     "Pasted image 20260204200842.png",
     "TCP vs UDP.png",
     "OSI.png",
     "Scanning - Network Mapping.png",
     "Pen testing methodology.png",
-    "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting WebDAV With Metasploit.md",
-    "2026-02-08.md",
     "Untitled.canvas",
-    "Networking/SMB Relay Attack.md",
     "Untitled 1.base",
     "Untitled.base",
     "Penetration testing/Network-Based Attacks",
     "Penetration testing/System Host Based Attacks/Linux/Linux Credential Dumping",
     "Penetration testing/System Host Based Attacks/Linux/Linux Privilege Escalation",
-    "Untitled 1.canvas",
-    "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation",
-    "Penetration testing/System Host Based Attacks/Linux/Exploits",
-    "Penetration testing/System Host Based Attacks/Windows/Windows File System Vulnerabilities/Alternate_Data_Streams.mp4",
-    "Penetration testing/System Host Based Attacks/Windows/Windows File System Vulnerabilities"
+    "Untitled 1.canvas"
   ]
 }

