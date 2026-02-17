@@ -8,20 +8,35 @@
         "type": "tabs",
         "children": [
           {
-            "id": "bb8dca2c65e94b72",
+            "id": "ea2d3d8f49d8ff20",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Confusions.md",
+                "file": "Post Exploitation/Windows/Persistence via Services.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Confusions"
+              "title": "Persistence via Services"
+            }
+          },
+          {
+            "id": "f8c6bbf028b7df51",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Post Exploitation/Linux/Persistence.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Persistence"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -41,7 +56,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "byCreatedTimeReverse",
-                "autoReveal": true
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -54,7 +69,7 @@
               "type": "search",
               "state": {
                 "query": "",
-                "matchingCase": false,
+                "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
@@ -183,40 +198,45 @@
       "bases:Create new base": false
     }
   },
-  "active": "bb8dca2c65e94b72",
+  "active": "f8c6bbf028b7df51",
   "lastOpenFiles": [
-    "Penetration testing/System Host Based Attacks/Linux/Exploits/FTP.md",
-    "Post Exploitation/Windows/Pivoting.md",
-    "Post Exploitation/Windows/Clearing Windows Event Logs.md",
-    "Post Exploitation/Windows/Keylogging.md",
-    "Post Exploitation/Windows/Enabling RDP.md",
-    "Post Exploitation/Windows/Persistence.md",
-    "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Bypassing UAC with UACMe.md",
+    "Post Exploitation/Windows/Persistence via Enabling RDP.md",
     "Infos/Must know.md",
+    "Post Exploitation/Windows/Persistence via Services.md",
+    "Privilege Escalation/Linux Privilege Escalation/Identifying with LinEnum & Post-Exploitation.md",
+    "Privilege Escalation/Windows Privilege Escalation/Identifying with PrivescCheck & Post-Exploitation.md",
+    "Post Exploitation/Linux/Enumeration Commands Linux.md",
+    "Post Exploitation/Windows/Enumeration Commands Windows.md",
+    "Post Exploitation/Upgrading Non-Interactive Shells.md",
+    "Post Exploitation/Transferring Files to Target Systems.md",
+    "Penetration Testing Phases.png",
+    "Post-Exploitation Methodology.png",
+    "0a70510e-1.png",
+    "Posr-Exploitation Methodology.pdf",
     "Post Exploitation/Windows/Modules & Commands.md",
-    "Metasploit/Meterpreter/Search.md",
+    "Information Gathering and Enumeration/Information Gathering/Active Information Gathering.md",
+    "Infos/Netcat.md",
+    "Privilege Escalation/Linux Privilege Escalation/Exploiting Misconfigured Cron Jobs.md",
+    "Detection & Evasion & PowerShell code.md",
+    "Networking/Network Layer (OSI Layer 3).md",
+    "Privilege Escalation/Linux Privilege Escalation/Linux Kernel Exploitation.md",
+    "Privilege Escalation/Linux Privilege Escalation/Exploiting SUID Binaries.md",
+    "Infos/Hydra.md",
+    "Infos/etc hosts.md",
+    "Infos/Bind Shell vs Reverse Shell.md",
+    "Post Exploitation/Linux/Persistence.md",
+    "Penetration testing/System Host Based Attacks/Linux/Linux Credential Dumping/Dumping Linux Password Hashes.md",
+    "Post Exploitation/Linux/Priv Esc via chkrootkit.md",
+    "Privilege Escalation/Untitled",
+    "Privilege Escalation",
+    "Post Exploitation/Linux/Modules & Commands.md",
+    "Post Exploitation/Windows/Pivoting.md",
+    "Privilege Escalation/Windows Privilege Escalation/Confusions.md",
     "Post Exploitation/Linux",
     "Post Exploitation/Windows",
     "Post Exploitation",
-    "Useful Linux commands/Metasploit commands.md",
-    "Information Gathering and Enumeration/Enumeration/FTP Enumeration & Exploitation.md",
-    "Vulnerability Assessment/Frequently Exploited Linux Services.md",
-    "Penetration testing/System Host Based Attacks/Linux/Linux Privilege Escalation/Exploiting Misconfigured Cron Jobs.md",
-    "Metasploit/Auxiliary Modules.md",
-    "Penetration testing/System Host Based Attacks/Linux/Exploits/SAMBA.md",
     "Metasploit/Meterpreter",
-    "Penetration testing/System Host Based Attacks/Linux/Exploits/re Frequently Exploited Linux Services.md",
-    "Penetration testing/System Host Based Attacks/Linux/Exploits/re Shellshock (CVE-2014-6271) (Linux Systems).md",
-    "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting Apache Tomcat.md",
-    "Metasploit/MSF Resource Scripts – Automation.md",
-    "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting WinRM (Windows Remote Management Protocol).md",
-    "Vulnerability Analysis/EternalBlue (MS17-010) (SMB).md",
-    "Payloads/Msfvenom generating and encoding and injecting payloads.md",
-    "Penetration testing/System Host Based Attacks/Windows/Windows Privilege Escalation/Confusions.md",
-    "Vulnerability Scanning/WMAP.md",
     "Payloads",
-    "Vulnerability Scanning/Vulnerability Scanning With MSF.md",
-    "Penetration Testing Phases.png",
     "Pasted image 20260204200842.png",
     "TCP vs UDP.png",
     "OSI.png",
@@ -225,9 +245,6 @@
     "Untitled.canvas",
     "Untitled 1.base",
     "Untitled.base",
-    "Penetration testing/Network-Based Attacks",
-    "Penetration testing/System Host Based Attacks/Linux/Linux Credential Dumping",
-    "Penetration testing/System Host Based Attacks/Linux/Linux Privilege Escalation",
     "Untitled 1.canvas"
   ]
 }

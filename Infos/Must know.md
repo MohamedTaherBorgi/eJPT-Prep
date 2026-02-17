@@ -613,7 +613,7 @@ So your observation is correct — **elevated admin can dump SAM**, but **not LS
 
 ---
 ---
-When you're doing web directory enumeration (using tools like `gobuster`, `ffuf`, or `dirb`) :
+#### When you're doing web directory enumeration (using tools like `gobuster`, `ffuf`, or `dirb`) :
 
 ### The Cheat Sheet
 
@@ -625,6 +625,76 @@ When you're doing web directory enumeration (using tools like `gobuster`, `ffuf`
 | **403 Forbidden**    | **No Entry**     | The door exists, but the server is told never to let you in (often due to IP whitelisting or folder permissions). |
 | **301 / 302**        | **Redirect**     | You're being sent to a different door. (e.g., `/admin` redirects to `/admin/login.php`).                          |
 | **500 Error**        | **Server Crash** | You broke something. Sometimes sending a weird character in the URL causes the code to fail.                      |
+
+---
+---
+# PsExec vs RPC
+
+To understand the difference between **PsExec** and **RPC**, it helps to distinguish a **Tool** from a **Protocol**.
+
+Think of **RPC** as the phone line (the infrastructure) and **PsExec** as the person making the call (the application).
+
+## 1. RPC (Remote Procedure Call): The "Nervous System"
+
+RPC is the protocol that allows a program on one computer to run code on another without the programmer needing to know how the network works.
+
+- **Port:** It primarily uses **Port 135** (the "Endpoint Mapper") to direct clients to the correct service ports.
+    
+- **Role:** It handles background "chatter" like changing passwords, starting services, or connecting to printers.
+    
+- **Stealth:** It is very quiet. Pentesters use it for **enumeration** (gathering info) because it rarely triggers "service created" alerts.
+
+---
+## 2. PsExec: The "Swiss Army Knife"
+
+PsExec is a utility that **uses** RPC and SMB to give you a remote command prompt. It is not a protocol; it's an automation tool.
+
+- **Port:** It primarily relies on **SMB (Port 445)**.
+    
+- **How it works:**
+    
+    1. It connects via SMB and uploads `PSEXESVC.exe` to the remote `ADMIN$` share.
+        
+    2. It uses **RPC** to tell the remote machine to start that file as a service.
+        
+    3. It opens a communication "pipe" to send your commands and show you the output.
+
+---
+## 3. PsExec for Privilege Escalation (The "God Mode" Trick) (Need Local Admin Rights to elevate yourself)
+
+In pentesting, PsExec isn't just for remote access; it is one of the easiest ways to perform **Local Privilege Escalation** from "Administrator" to **"SYSTEM."**
+
+On Windows, the **SYSTEM** account has more power than a standard Administrator (e.g., it can read sensitive memory or access restricted registry keys). If you have **local admin rights**, you can use PsExec to "promote" yourself.
+
+**The Command:**
+
+```
+psexec -i -s cmd.exe
+```
+
+- **`-i` (Interactive):** Forces the new command prompt to appear on your current desktop.
+    
+- **`-s` (System):** Tells Windows to run the process as the **NT AUTHORITY\SYSTEM** account.
+
+> **Why this works:** Only an Administrator can create a service. Since PsExec creates a service to run its tasks, and services can be configured to run as SYSTEM, an Admin can effectively "spawn" a child process that has higher authority than the parent.
+
+---
+### 4. Key Differences Table
+
+|**Feature**|**RPC**|**PsExec**|
+|---|---|---|
+|**Type**|Communication Protocol|Administrative Utility|
+|**Port Used**|**135**|**445** (via SMB)|
+|**Stealth**|High (Standard background noise)|Low (Creates/Deletes a service)|
+|**PrivEsc**|Not direct (Used by other tools)|**Yes** (Admin $\rightarrow$ SYSTEM)|
+|**Best For**|Quietly listing users/groups|Getting a full interactive shell|
+
+---
+### 5. Which should you use?
+
+- **Use RPC (`rpcclient`)** when you want to remain undetected while gathering information about users and shares.
+
+- **Use PsExec** when you already have credentials and need a high-privilege shell to dump passwords, install persistent backdoors, or move laterally across the network.
 
 ---
 ---

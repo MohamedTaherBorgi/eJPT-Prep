@@ -96,7 +96,7 @@ run
 > 💡 **What "unshadow" means**:  
 > - Combines `/etc/passwd` (usernames) + `/etc/shadow` (hashes)  
 > - Outputs **crack-ready format**: `username:hash`  
-> - Saves to `.msf4/loot/[timestamp]/linux.hashes.txt`
+> - Saves to `loot`
 
 ✅ Output:
 ```
