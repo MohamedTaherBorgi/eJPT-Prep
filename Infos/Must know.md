@@ -26,6 +26,8 @@ While Windows is for the "office," Linux is usually for the "infrastructure."
 | ----------- | ----------- | --------------------------------------------------------------------------------- |
 | **22**      | SSH         | The gold standard for remote access. Target for brute-force or private key theft. |
 | **111**     | RPCBind     | Used by NFS. Can reveal which folders are being shared with the network.          |
+| **139**     | Samba       | Over NetBIOS Session Service                                                      |
+| **445**     | Samba       | SMB over TCP                                                                      |
 | **512-514** | R-Services  | Old, insecure remote commands (rlogin, rsh). Often found in "legacy" labs.        |
 | **2049**    | NFS         | Network File System. Check for "No Root Squash" (easy path to Root privileges).   |
 
@@ -63,6 +65,15 @@ A breach usually ends here.
 |**161**|SNMP|Simple Network Management Protocol. If the "Community String" is `public`, it leaks everything about the hardware.|
 |**515 / 9100**|Printing|LPD/JetDirect. Printers are often overlooked and have no passwords.|
 |**10000**|Webmin|Web-based Linux management. Famous for old "Backdoor" exploits.|
+
+---
+---
+
+# Upgrade to interactive shell :
+
+```
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+```
 
 ---
 ---
@@ -698,3 +709,66 @@ psexec -i -s cmd.exe
 
 ---
 ---
+## Kerbrute User Enumeration & FAQ
+
+Overview
+
+  
+
+• Function: Enumerates valid domain usernames without credentials.
+
+  
+
+• Protocol: Kerberos (Port 88).
+
+  
+
+• Target: Must be a Domain Controller (DC).
+
+  
+
+---
+
+  
+
+Study Questions (Self-Check)
+
+  
+
+Q: Can Kerbrute enumerate users without any credentials? A: Yes. It uses the Kerberos error codes (e.g., `KDC_ERR_C_PRINCIPAL_UNKNOWN`) to distinguish between valid and invalid usernames.
+
+  
+
+Q: Does the target machine need to be online? A: Yes. It is an online attack that requires a direct network connection to the Domain Controller's KDC service.
+
+  
+
+Q: Why can't I run Kerbrute against a standard Windows 10 workstation IP? A: Standard workstations do not hold the domain's "phone book" (NTDS.dit). Only the DC has the authority and the database to validate domain-wide users.
+
+  
+
+Q: What should I use if the target is a standalone machine (not a domain)? A: Kerbrute will not work. Use SMB (NetExec/enum4linux) or RPC (rpcclient) instead.
+
+  
+
+---
+
+  
+
+Command Cheat Sheet
+
+  
+
+```
+
+  
+
+# Enumerating users against a specific DC IP
+
+  
+
+kerbrute userenum --dc 10.0.0.5 -d megacorp.local usernames.txt
+
+  
+
+```
