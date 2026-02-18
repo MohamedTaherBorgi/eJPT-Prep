@@ -1,6 +1,4 @@
-# 📁 eJPT Notes Vault
-
-A Repository of notes and cheatsheets for the **eJPT** certification.
+# 📁 Pentesting Notes Vault
 
 This repo is optimized for the **Obsidian** app because:
 
