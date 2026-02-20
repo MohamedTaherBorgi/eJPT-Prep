@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Rooms & CTFs/Crontab Root PrivEsc.md",
+                "file": "Information Gathering and Enumeration/Enumeration/FTP Enumeration & Exploitation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Crontab Root PrivEsc"
+              "title": "FTP Enumeration & Exploitation"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "\"ftp enum\"",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -185,8 +186,10 @@
   },
   "active": "8af584b67845bbef",
   "lastOpenFiles": [
-    "pentestmonkey Reverse_shell.pdf",
+    "Penetration testing/System Host Based Attacks/Linux/Exploits/FTP.md",
+    "Useful Linux commands/Commands.md",
     "Rooms & CTFs/Crontab Root PrivEsc.md",
+    "pentestmonkey Reverse_shell.pdf",
     "goal.png",
     "README.md",
     "Reverse Shell Cheat Sheet _ pentestmonkey.html",
@@ -216,7 +219,6 @@
     "Privilege Escalation/Linux Privilege Escalation/sudo -l.md",
     "Privilege Escalation/Linux Privilege Escalation/Linux Kernel Exploitation.md",
     "Infos/cat alternatives.md",
-    "Useful Linux commands/Commands.md",
     "Nmap Evasion, Scanning and NSE/Nmap/Weird -sN vs -sF vs -sX.md",
     "reddit 4.png",
     "reddit 3.png",
