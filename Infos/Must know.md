@@ -709,66 +709,11 @@ psexec -i -s cmd.exe
 
 ---
 ---
-## Kerbrute User Enumeration & FAQ
+# Check current directory privs on Linux :
 
-Overview
-
-  
-
-• Function: Enumerates valid domain usernames without credentials.
-
-  
-
-• Protocol: Kerberos (Port 88).
-
-  
-
-• Target: Must be a Domain Controller (DC).
-
-  
-
----
-
-  
-
-Study Questions (Self-Check)
-
-  
-
-Q: Can Kerbrute enumerate users without any credentials? A: Yes. It uses the Kerberos error codes (e.g., `KDC_ERR_C_PRINCIPAL_UNKNOWN`) to distinguish between valid and invalid usernames.
-
-  
-
-Q: Does the target machine need to be online? A: Yes. It is an online attack that requires a direct network connection to the Domain Controller's KDC service.
-
-  
-
-Q: Why can't I run Kerbrute against a standard Windows 10 workstation IP? A: Standard workstations do not hold the domain's "phone book" (NTDS.dit). Only the DC has the authority and the database to validate domain-wide users.
-
-  
-
-Q: What should I use if the target is a standalone machine (not a domain)? A: Kerbrute will not work. Use SMB (NetExec/enum4linux) or RPC (rpcclient) instead.
-
-  
-
----
-
-  
-
-Command Cheat Sheet
-
-  
-
+``` shell
+ls -ld .
 ```
 
-  
-
-# Enumerating users against a specific DC IP
-
-  
-
-kerbrute userenum --dc 10.0.0.5 -d megacorp.local usernames.txt
-
-  
-
-```
+---
+---
