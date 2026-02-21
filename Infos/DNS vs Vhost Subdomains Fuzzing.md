@@ -41,9 +41,25 @@ Use when you have an IP but no DNS record.
 ```bash
 ffuf -u http://<TARGET_IP> -H "Host: FUZZ.school.com" \
 -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt
+-fs 1234 # filter by size if default response is fixed
 ```
 
 This fuzzes the `Host` header directly.
+
+>**-u** = base URL (use IP!)
+>**-H** "Host: FUZZ.DOMAIN" = fuzz the Host header
+>**-fs** = filter responses with this size (hide invalid hosts)
+
+### What about Hydra ??
+
+**No, Hydra does not have built-in support for subdomain enumeration or virtual host (vhost) fuzzing via the Host header.**
+
+Hydra is primarily a **brute-force / dictionary attack tool for authentication** (logins, passwords on services like SSH, RDP, HTTP forms, SMB, FTP, etc.). It does **not** have a dedicated module or mode for:
+- DNS-based subdomain brute-forcing
+- Host header fuzzing / vhost enumeration
+### Why people sometimes confuse it
+
+- Hydra **can** attack HTTP services (e.g., http-get, http-post-form, http-head) → but these are for **brute-forcing login forms** or basic auth, not for fuzzing the Host header or discovering subdomains.
 
 ---
 ## 3️⃣ Handling False Positives (Filtering the Noise)

@@ -1,3 +1,7 @@
+#### For Hydra bruteforce check :  [[Hydra bruteforce]]
+
+---
+---
 When you type `mysql` at the end of a Hydra command, Hydra isn't looking for a "file path" or an "app" on the target server's hard drive. Instead, it is selecting a specific **internal code module** inside Hydra itself.
 
 Here is how that "knowledge" works:
