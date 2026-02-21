@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Rooms & CTFs/Untitled.md",
+                "file": "Rooms & CTFs/BasicPentest Room THM.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "BasicPentest Room THM"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "impo",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,8 +74,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -184,10 +183,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "01cf6558a927a153",
+  "active": "bb5e3b04c222b851",
   "lastOpenFiles": [
     "Rooms & CTFs/Cookie Bypass.md",
-    "Rooms & CTFs/Untitled.md",
+    "Rooms & CTFs/BasicPentest Room THM.md",
     "linuxfilepermissions.png",
     "Infos/smbclient vs rpcclient.md",
     "Infos/Hydra bruteforce.md",
