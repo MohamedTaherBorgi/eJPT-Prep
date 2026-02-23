@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "ac63314b34665944",
+        "id": "d7c432b2f184b37f",
         "type": "tabs",
         "children": [
           {
-            "id": "78d4f7b2f5861c3e",
+            "id": "0cb3003057572eee",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Rooms & CTFs/Blog (WordPress).md",
-                "mode": "preview",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Blog (WordPress)"
+              "title": "New tab"
             }
           }
         ]
@@ -53,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "impor",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -183,20 +179,21 @@
       "bases:Create new base": false
     }
   },
-  "active": "78d4f7b2f5861c3e",
+  "active": "0cb3003057572eee",
   "lastOpenFiles": [
-    "Rooms & CTFs/BasicPentest Room THM.md",
+    "Infos/Apache Version & robots.txt Enumeration.md",
+    "Infos/Hydra bruteforce.md",
+    "Infos/FFuF Directory & File Fuzzing.md",
+    "Infos/smbclient vs rpcclient.md",
     "Rooms & CTFs/Blog (WordPress).md",
-    "Privilege Escalation/Linux Privilege Escalation/Exploiting SUID Binaries.md",
     "Infos/Must know.md",
+    "Rooms & CTFs/BasicPentest Room THM.md",
+    "Privilege Escalation/Linux Privilege Escalation/Exploiting SUID Binaries.md",
     "Post Exploitation/Upgrading Non-Interactive Shells.md",
     "Information Gathering and Enumeration/Enumeration/SSH Enumeration & Exploitation.md",
     "pentestmonkey Reverse_shell.pdf",
     "Rooms & CTFs/Cookie Bypass.md",
     "linuxfilepermissions.png",
-    "Infos/smbclient vs rpcclient.md",
-    "Infos/Hydra bruteforce.md",
-    "Infos/FFuF Directory & File Fuzzing.md",
     "Infos/Stealthy ping.md",
     "Infos/DNS vs Vhost Subdomains Fuzzing.md",
     "Infos/Hydra.md",
@@ -213,7 +210,6 @@
     "Post Exploitation/Windows/Pivoting.md",
     "Vulnerability Assessment/Frequently Exploited Windows Services.md",
     "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting SMB.md",
-    "Vulnerability Analysis/Pass-The-Hash Attacks (SMB).md",
     "goal.png",
     "Reverse Shell Cheat Sheet _ pentestmonkey.html",
     "Reverse Shell Cheat Sheet _ pentestmonkey_files/search.gif",

