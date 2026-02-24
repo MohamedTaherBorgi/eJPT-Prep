@@ -3,7 +3,6 @@ To read `/etc/passwd` through an XML vulnerability, you are looking for an **XXE
 Here is how the attack works and the exact payload you would use.
 
 ---
-
 ### 🛠️ The Attack Payload
 
 If the application normally expects a piece of XML like this:
@@ -31,7 +30,6 @@ XML
 ```
 
 ---
-
 ### 🔍 How it works (Step-by-Step)
 
 1. **The Declaration**: `<!DOCTYPE test [...]>` tells the XML parser we are defining some custom rules.
@@ -44,7 +42,6 @@ XML
     
 
 ---
-
 ### 🚩 Where to find this in Labs (eJPT/CPTS)
 
 You won't find this by just browsing. You have to look for:
@@ -57,7 +54,6 @@ You won't find this by just browsing. You have to look for:
     
 
 ---
-
 ### ⚠️ A Note on "Blind" XXE
 
 Sometimes the server processes your XML but **doesn't** show the result on the screen. In that case, you can't just "read" the file. You have to make the server "exfiltrate" the data to you (e.g., making the server send the file contents to a web server you control).

