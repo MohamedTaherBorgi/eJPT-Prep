@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "d7c432b2f184b37f",
+        "id": "96ae1d7ca521ac9c",
         "type": "tabs",
         "children": [
           {
-            "id": "0cb3003057572eee",
+            "id": "6b9394fe30f596c3",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Rooms & CTFs/WordPress CVE-2021-29447 & Post-Exploitation.md",
+                "mode": "preview",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "WordPress CVE-2021-29447 & Post-Exploitation"
             }
           }
         ]
@@ -179,8 +183,18 @@
       "bases:Create new base": false
     }
   },
-  "active": "0cb3003057572eee",
+  "active": "6b9394fe30f596c3",
   "lastOpenFiles": [
+    "pentestmonkey Reverse_shell.pdf",
+    "Rooms & CTFs/WordPress CVE-2021-29447 & Post-Exploitation.md",
+    "linuxfilepermissions.png",
+    "swisskyrepo-github-io-PayloadsAllTheThings-....pdf",
+    "Infos/XXE LFI & SSRF.md",
+    "Detection, Evasion & Obfuscation/Detection & Evasion & PowerShell code.md",
+    "Detection, Evasion & Obfuscation",
+    "README.md",
+    "Rooms & CTFs/Cookie Bypass.md",
+    "Post Exploitation/Clearing tracks.md",
     "Infos/Apache Version & robots.txt Enumeration.md",
     "Infos/Hydra bruteforce.md",
     "Infos/FFuF Directory & File Fuzzing.md",
@@ -191,9 +205,6 @@
     "Privilege Escalation/Linux Privilege Escalation/Exploiting SUID Binaries.md",
     "Post Exploitation/Upgrading Non-Interactive Shells.md",
     "Information Gathering and Enumeration/Enumeration/SSH Enumeration & Exploitation.md",
-    "pentestmonkey Reverse_shell.pdf",
-    "Rooms & CTFs/Cookie Bypass.md",
-    "linuxfilepermissions.png",
     "Infos/Stealthy ping.md",
     "Infos/DNS vs Vhost Subdomains Fuzzing.md",
     "Infos/Hydra.md",
@@ -204,12 +215,6 @@
     "Nmap Evasion, Scanning and NSE/Nmap/NSE Scripts.md",
     "Infos/Hydra vs John vs Hashcat.md",
     "reddit 1.png",
-    "Infos/Hashcat vs John the Ripper.md",
-    "Infos/Kiwi (Mimikatz) vs hashdump vs smart_hashdump.md",
-    "Infos/local_exploit_suggester (Lester).md",
-    "Post Exploitation/Windows/Pivoting.md",
-    "Vulnerability Assessment/Frequently Exploited Windows Services.md",
-    "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting SMB.md",
     "goal.png",
     "Reverse Shell Cheat Sheet _ pentestmonkey.html",
     "Reverse Shell Cheat Sheet _ pentestmonkey_files/search.gif",
@@ -225,8 +230,6 @@
     "1.png",
     "Clearing tracks",
     "Posr-Exploitation Methodology.pdf",
-    "Privilege Escalation/Untitled",
-    "Privilege Escalation",
     "Untitled.canvas",
     "Untitled 1.canvas"
   ]
