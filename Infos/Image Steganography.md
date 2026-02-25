@@ -42,7 +42,7 @@ binwalk -e image.jpg              # extract embedded files (creates _image.jpg.e
 # Try extract without password (often empty passphrase)
 steghide extract -sf image.jpg
 
-# If password required → brute force
+# If password required passphrase → brute force
 stegseek image.jpg /usr/share/wordlists/rockyou.txt
 stegseek --crack image.jpg /usr/share/wordlists/rockyou.txt    # faster mode
 ```

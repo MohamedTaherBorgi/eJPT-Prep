@@ -5,8 +5,8 @@ Use this exact sequence every time you land a basic/dumb reverse shell during ce
 # Gold Standard: Stabilize a Dumb Shell → Fully Interactive PTY
 
 ## Phase 1 – Spawn PTY with Python (most reliable method)
-```bash
 python3 -c 'import pty; pty.spawn("/bin/bash")'
+
 # Fallbacks if python3 missing or broken:
 python  -c 'import pty; pty.spawn("/bin/bash")'
 python2 -c 'import pty; pty.spawn("/bin/bash")'
