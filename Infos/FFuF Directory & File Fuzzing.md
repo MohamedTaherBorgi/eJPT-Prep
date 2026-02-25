@@ -3,7 +3,7 @@
 ### The Command
 
 ```bash
-ffuf -u http://10.112.156.214/FUZZ -w /usr/share/wordlists/dirb/common.txt -e .php,.txt,.bak,.html -c -v
+ffuf -u http://10.112.156.214/FUZZ -w /usr/share/wordlists/dirb/common.txt -e .php,.txt,.bak,.html -c -v -fc 403,404
 ````
 
 ---

