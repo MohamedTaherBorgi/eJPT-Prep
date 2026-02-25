@@ -3,7 +3,7 @@
 ### The Command
 
 ```bash
-ffuf -u http://10.112.156.214/FUZZ -w /usr/share/wordlists/dirb/common.txt -e .php,.txt,.bak,.html -c
+ffuf -u http://10.112.156.214/FUZZ -w /usr/share/wordlists/dirb/common.txt -e .php,.txt,.bak,.html -c -v
 ````
 
 ---
@@ -15,6 +15,7 @@ ffuf -u http://10.112.156.214/FUZZ -w /usr/share/wordlists/dirb/common.txt -e .p
 | `-w`      | **Wordlist**: Path to your directory discovery list (e.g., `common.txt` or `directory-list-2.3-medium.txt`). |
 | `-e`      | **Extensions**: Comma-separated list. FFuF will append these to every word in the list.                      |
 | `-c`      | **Color**: Enables colorized output (Green for 200, Yellow for 301, Red for 403/500).                        |
+| `-v`      | **verbose**                                                                                                  |
 | `-fc 403` | **filter code**: We'll hide from the output all 403 HTTP status codes                                        |
 | `-mc 200` | **filter code**: We want to see only 200 status code responses                                               |
 
