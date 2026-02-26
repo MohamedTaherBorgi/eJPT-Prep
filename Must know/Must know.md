@@ -717,3 +717,19 @@ ls -ld .
 
 ---
 ---
+# `nc` vs `nc -nv`
+
+```sh
+nc -nv <ip> <port>
+```
+
+The difference between `nc` and `nc -nv` is all about **speed** and **stealth**. By default, Netcat is "polite"—it tries to be helpful by looking up names (DNS). In a lab or pentest environment, that politeness usually creates unnecessary delays or logs.
+
+### The Breakdown of the Flags
+
+- **`-n` (No DNS):** Tells Netcat **not** to try to resolve hostnames. If you provide an IP address, it connects to that IP immediately and stays there. This prevents DNS lookup delays and keeps your activity off the local DNS server logs.
+    
+- **`-v` (Verbose):** Tells Netcat to **report its status**. Without this, if a connection fails, Netcat might just sit silently. With it, it will explicitly tell you `Connection refused` or `Succeeded!`.
+
+---
+---

@@ -16,7 +16,6 @@ python2 -c 'import pty; pty.spawn("/bin/bash")'
 
 ## Phase 2 – Background + Raw Terminal Mode
 1. Press **Ctrl + Z** → background the shell  
-   (you'll see: `[1]+  Stopped                 ...`)
 
 2. Run (type blindly – you won't see chars):
 ```bash

