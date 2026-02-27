@@ -11,14 +11,12 @@
             "id": "0a3d7d9c4f04044d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Infos/Stealthy ping.md",
-                "mode": "source",
-                "source": false
+                "file": "pentestmonkey Reverse_shell.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Stealthy ping"
+              "icon": "lucide-file-text",
+              "title": "pentestmonkey Reverse_shell"
             }
           }
         ]
@@ -53,7 +51,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "\"hping3\"",
+                "query": "rpcclient",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -185,8 +183,16 @@
   },
   "active": "0a3d7d9c4f04044d",
   "lastOpenFiles": [
-    "Rooms & CTFs/SMTP vs POP3 & hash-identifier & nth.md",
+    "Infos/smbclient vs rpcclient.md",
     "Must know/Must know.md",
+    "Infos/Kerbrute.md",
+    "Rooms & CTFs/Blog (WordPress).md",
+    "Rooms & CTFs/BasicPentest Room THM.md",
+    "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting SMB.md",
+    "Information Gathering and Enumeration/Enumeration/SMB Enumeration & Exploitation.md",
+    "Vulnerability Analysis/EternalBlue (MS17-010) (SMB).md",
+    "Infos/Stealthy ping.md",
+    "Rooms & CTFs/SMTP vs POP3 & hash-identifier & nth.md",
     "Rooms & CTFs/Anonymous.md",
     "Infos/Dumb Shell Stabilizer.md",
     "Infos/Hydra bruteforce.md",
@@ -195,11 +201,8 @@
     "Infos/DNS vs Vhost Subdomains Fuzzing.md",
     "Infos/Hydra.md",
     "Infos/Apache Version & robots.txt Enumeration.md",
-    "Infos/smbclient vs rpcclient.md",
-    "Infos/Stealthy ping.md",
     "Privilege Escalation/Linux Privilege Escalation/Exploiting SUID Binaries.md",
     "Infos/Image Steganography.md",
-    "Rooms & CTFs/Blog (WordPress).md",
     "Privilege Escalation/Windows Privilege Escalation/Bypassing UAC with UACMe.md",
     "Post Exploitation/Clearing tracks.md",
     "Metasploit/Auxiliary Modules.md",
@@ -209,12 +212,7 @@
     "Infos/File Exfiltration & Download Methods.md",
     "gtfobins-org-.pdf",
     "swisskyrepo-github-io-PayloadsAllTheThings-....pdf",
-    "README.md",
     "gtfobins-org-....pdf",
-    "Information Gathering and Enumeration/Enumeration/FTP Enumeration & Exploitation.md",
-    "Vulnerability Assessment/Frequently Exploited Linux Services.md",
-    "Infos/XXE LFI & SSRF.md",
-    "governance and audit/Auditing Fundamentals/Security Auditing Process & Lifecycle.md",
     "pentestmonkey Reverse_shell.pdf",
     "linuxfilepermissions.png",
     "Detection, Evasion & Obfuscation",
