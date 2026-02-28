@@ -9,9 +9,3 @@ This repo is optimized for the **Obsidian** app because:
 **Rooms & CTFs search:**
 https://ippsec.rocks/?#
 
-**Reverse Shell Cheat Sheet:**
-https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
-
-**OSCP tips:**
-https://whoisshuvam.medium.com/how-i-passed-my-oscp-in-2024-36cbe9357442
-
