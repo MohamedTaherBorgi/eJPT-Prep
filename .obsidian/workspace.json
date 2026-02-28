@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "a76bf3aad781e7fa",
+        "id": "6b4b2df785ab5aac",
         "type": "tabs",
         "children": [
           {
-            "id": "0a3d7d9c4f04044d",
+            "id": "e36d246f5a063ea7",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "pentestmonkey Reverse_shell.pdf"
+                "file": "Privilege Escalation/Linux Privilege Escalation/Exploiting SUID Binaries.md",
+                "mode": "preview",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "pentestmonkey Reverse_shell"
+              "icon": "lucide-file",
+              "title": "Exploiting SUID Binaries"
             }
           }
         ]
@@ -51,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "rpcclient",
+                "query": "nfs",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -181,39 +183,39 @@
       "bases:Create new base": false
     }
   },
-  "active": "0a3d7d9c4f04044d",
+  "active": "e36d246f5a063ea7",
   "lastOpenFiles": [
-    "Infos/smbclient vs rpcclient.md",
+    "Rooms & CTFs/Deja Vu API exploit + SUID $PATH PrivEsc.md",
+    "Infos/PrivEsc with; env + SUID.md",
+    "Infos/Dumb Shell Stabilizer.md",
+    "Rooms & CTFs/SMTP vs POP3 & hash-identifier & nth.md",
+    "Infos/FFuF Directory & File Fuzzing.md",
+    "Infos/Windows Hashdump Vs. kiwi, Mimikatz.md",
+    "Infos/Stealthy ping.md",
+    "Infos/Image Steganography.md",
     "Must know/Must know.md",
+    "pentestmonkey Reverse_shell.pdf",
+    "Infos/smbclient vs rpcclient.md",
     "Infos/Kerbrute.md",
     "Rooms & CTFs/Blog (WordPress).md",
     "Rooms & CTFs/BasicPentest Room THM.md",
     "Penetration testing/System Host Based Attacks/Windows/Exploits/Exploiting SMB.md",
     "Information Gathering and Enumeration/Enumeration/SMB Enumeration & Exploitation.md",
     "Vulnerability Analysis/EternalBlue (MS17-010) (SMB).md",
-    "Infos/Stealthy ping.md",
-    "Rooms & CTFs/SMTP vs POP3 & hash-identifier & nth.md",
     "Rooms & CTFs/Anonymous.md",
-    "Infos/Dumb Shell Stabilizer.md",
     "Infos/Hydra bruteforce.md",
-    "Infos/PrivEsc with; env + SUID.md",
-    "Infos/FFuF Directory & File Fuzzing.md",
     "Infos/DNS vs Vhost Subdomains Fuzzing.md",
     "Infos/Hydra.md",
     "Infos/Apache Version & robots.txt Enumeration.md",
     "Privilege Escalation/Linux Privilege Escalation/Exploiting SUID Binaries.md",
-    "Infos/Image Steganography.md",
     "Privilege Escalation/Windows Privilege Escalation/Bypassing UAC with UACMe.md",
     "Post Exploitation/Clearing tracks.md",
     "Metasploit/Auxiliary Modules.md",
     "Useful Linux commands/Commands.md",
-    "Infos/Hydra vs John vs Hashcat.md",
     "Must know",
-    "Infos/File Exfiltration & Download Methods.md",
     "gtfobins-org-.pdf",
     "swisskyrepo-github-io-PayloadsAllTheThings-....pdf",
     "gtfobins-org-....pdf",
-    "pentestmonkey Reverse_shell.pdf",
     "linuxfilepermissions.png",
     "Detection, Evasion & Obfuscation",
     "reddit 1.png",

@@ -1,3 +1,17 @@
+
+| **Status Code**            | **Meaning**        | **Red Teaming Context**                                                     |
+| -------------------------- | ------------------ | --------------------------------------------------------------------------- |
+| **200 OK**                 | Request Succeeded  | **Target Found.** The resource exists and is accessible.                    |
+| **204 No Content**         | Succeeded (Empty)  | Resource exists but has no body (often API endpoints).                      |
+| **301 Moved**              | Permanent Redirect | Resource moved. Check the `Location` header; often a directory.             |
+| **302 Found**              | Temp Redirect      | Often indicates a login redirect or a protected area.                       |
+| **401 Unauthorized**       | Auth Required      | **Hit.** The resource exists but requires credentials (LFI/Bypass target).  |
+| **403 Forbidden**          | Access Denied      | **Hit.** Resource exists, but permissions or WAF are blocking you.          |
+| **404 Not Found**          | Missing            | Default state. Usually filtered out in `ffuf` with `-fc 404`.               |
+| **405 Method Not Allowed** | Wrong Verb         | Resource exists, but doesn't like `GET`. Try `POST` or `PUT`.               |
+| **500 Server Error**       | Application Crash  | **Paycheck.** Often indicates an unhandled exception or successful exploit. |
+| **503 Service Unavail**    | Overloaded/Down    | You might be rate-limited. Slow down your threads (`-t`).                   |
+
 # 🔍 FFuF: Directory & File Fuzzing
 
 ### The Command

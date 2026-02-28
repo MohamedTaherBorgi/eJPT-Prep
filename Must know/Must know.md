@@ -22,14 +22,14 @@ If you are attacking a corporate environment, these are your primary targets.
 
 While Windows is for the "office," Linux is usually for the "infrastructure."
 
-| **Port**    | **Service** | **Importance**                                                                    |
-| ----------- | ----------- | --------------------------------------------------------------------------------- |
-| **22**      | SSH         | The gold standard for remote access. Target for brute-force or private key theft. |
-| **111**     | RPCBind     | Used by NFS. Can reveal which folders are being shared with the network.          |
-| **139**     | Samba       | Over NetBIOS Session Service                                                      |
-| **445**     | Samba       | SMB over TCP                                                                      |
-| **512-514** | R-Services  | Old, insecure remote commands (rlogin, rsh). Often found in "legacy" labs.        |
-| **2049**    | NFS         | Network File System. Check for "No Root Squash" (easy path to Root privileges).   |
+| **Port**    | **Service** | **Importance**                                                                      |
+| ----------- | ----------- | ----------------------------------------------------------------------------------- |
+| **22**      | SSH         | The gold standard for remote access. Target for brute-force or private key theft.   |
+| **111**     | RPCBind     | Used by NFS. Can reveal which folders are being shared with the network.            |
+| **139**     | Samba       | Over NetBIOS Session Service                                                        |
+| **445**     | Samba       | SMB over TCP                                                                        |
+| **512-514** | R-Services  | Old, insecure remote commands (rlogin, rsh). Often found in "legacy" labs.          |
+| **2049**    | NFS         | Network File System. Check for "anonymous mounting" (easy path to Root privileges). |
 
 ---
 ### 3. Web & Data (Cross-Platform) (BOTH)
@@ -730,6 +730,17 @@ The difference between `nc` and `nc -nv` is all about **speed** and **stealth**.
 - **`-n` (No DNS):** Tells Netcat **not** to try to resolve hostnames. If you provide an IP address, it connects to that IP immediately and stays there. This prevents DNS lookup delays and keeps your activity off the local DNS server logs.
     
 - **`-v` (Verbose):** Tells Netcat to **report its status**. Without this, if a connection fails, Netcat might just sit silently. With it, it will explicitly tell you `Connection refused` or `Succeeded!`.
+
+---
+---
+# Cred Dumping :
+
+| **Feature**           | **Windows Tool**            | **Linux Equivalent**             |
+| --------------------- | --------------------------- | -------------------------------- |
+| **Local Hashes**      | `hashdump` (SAM Hive)       | `cat /etc/shadow`                |
+| **In-Memory Secrets** | `kiwi` / `mimikatz` (LSASS) | Memory dumping `sshd` or `gcore` |
+| **Identity Theft**    | `incognito` (Tokens)        | SSH Key theft / SUID binaries    |
+| **Kernel Exploits**   | `suggest` (Post module)     | `linux-exploit-suggester.sh`     |
 
 ---
 ---
