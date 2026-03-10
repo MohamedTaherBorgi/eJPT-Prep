@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Windows Prep/Fundamentals/ACTIVE DIRECTORY — COMPLETE NOTES.md",
+                "file": "Windows Prep/Fundamentals/Kerberos & NetNTLM Attack Vectors.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ACTIVE DIRECTORY — COMPLETE NOTES"
+              "title": "Kerberos & NetNTLM Attack Vectors"
             }
           }
         ]
@@ -183,10 +183,13 @@
       "bases:Create new base": false
     }
   },
-  "active": "e36d246f5a063ea7",
+  "active": "bb5e3b04c222b851",
   "lastOpenFiles": [
-    "Windows Prep/Fundamentals/Windows Registry & Credential Dumping.md",
+    "Windows Prep/Fundamentals/Kerberos & NetNTLM.md",
+    "Windows Prep/Fundamentals/Kerberos & NetNTLM Attack Vectors.md",
+    "Windows Prep/Fundamentals/Attack Vectors for each step of AUTH.md",
     "Windows Prep/Fundamentals/ACTIVE DIRECTORY — COMPLETE NOTES.md",
+    "Windows Prep/Fundamentals/Windows Registry & Credential Dumping.md",
     "Windows Prep/Fundamentals/Registry.md",
     "Windows Prep/Fundamentals/CMD.md",
     "Windows Prep/Notes.md",
@@ -210,9 +213,6 @@
     "Rooms & CTFs/Blog (WordPress).md",
     "Rooms & CTFs/BasicPentest Room THM.md",
     "Information Gathering and Enumeration/Enumeration/FTP.md",
-    "Information Gathering and Enumeration/Enumeration/msf FTP Enumeration & Exploitation.md",
-    "Rooms & CTFs/Deja Vu API exploit + SUID $PATH PrivEsc.md",
-    "Infos/PrivEsc with; env + SUID.md",
     "pentestmonkey Reverse_shell.pdf",
     "Must know",
     "gtfobins-org-.pdf",
