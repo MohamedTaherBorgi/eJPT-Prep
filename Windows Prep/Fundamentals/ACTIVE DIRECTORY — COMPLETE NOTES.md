@@ -147,6 +147,27 @@ Offensively — if you can write to a GPO linked at domain level, your settings 
 <u>BloodHound</u> maps who has GPO write permissions. 
 <u>SharpGPOAbuse</u> exploits writable GPOs.
 
+### GPO Distribution — SYSVOL
+
+GPOs are distributed to the network via a share called **SYSVOL**, stored on the DC:
+
+```
+C:\Windows\SYSVOL\sysvol\
+````
+
+All domain users have read access to SYSVOL to sync their GPOs periodically.
+
+**Sync timing:**
+- Changes to GPOs can take up to **2 hours** to apply to all machines
+- Force immediate sync on a specific machine:
+
+```powershell
+gpupdate /force
+````
+
+> **Offensively** — SYSVOL is readable by all domain users.
+>  Admins sometimes store scripts, passwords, or credentials in SYSVOL GPP (Group Policy Preferences) files. 
+>  Classic finding: `\\DC\SYSVOL\domain\Policies\` — search for `cpassword` in XML files → encrypted but easily decrypted via `gpp-decrypt`
 ---
 ## DELEGATION
 
@@ -241,3 +262,5 @@ Delegation               = what AD objects he can manage
 
 <u>All four apply simultaneously. No single place holds everything — AD combines them all at access time.</u>
 
+---
+---
