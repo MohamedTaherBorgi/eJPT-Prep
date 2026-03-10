@@ -4,7 +4,7 @@
 
 _User sends encrypted timestamp to the KDC._
 
-**AS-REP Roasting**
+## **AS-REP Roasting**
 
 - **Vulnerability:** Some accounts have "Do not require Kerberos preauthentication" enabled.
     
@@ -109,16 +109,15 @@ _User presents TGS to the target service._
 
 ---
 ### Summary Table
-
-|**Attack**|**Target Step**|**Requirements**|**Result**|
-|---|---|---|---|
-|**AS-REP Roasting**|Step 1|Account with preauth disabled|Crackable hash → Plaintext|
-|**Kerberoasting**|Step 3|Any domain user + SPN|Crackable hash → Plaintext|
-|**Golden Ticket**|Step 2|`krbtgt` hash (DA level)|Forge any TGT indefinitely|
-|**Silver Ticket**|Step 4|Service account hash|Forge TGS for specific service|
-|**Pass the Ticket**|Step 2/5|TGT or TGS from memory|Authenticate as victim|
-|**NTLM Relay**|NetNTLM|MITM Network position|Access as victim (Real-time)|
-|**LLMNR Poisoning**|NetNTLM|Local network access|Captured hash → Crack offline|
+| **Attack**          | **Target Step**                           | **Requirements**              | **Result**                     |
+| ------------------- | ----------------------------------------- | ----------------------------- | ------------------------------ |
+| **AS-REP Roasting** | **Step 1 — AS-REQ** (Initial Login)       | Account with preauth disabled | Crackable hash → Plaintext     |
+| **Kerberoasting**   | **Step 3 — TGS-REQ** (Service Request)    | Any domain user + SPN         | Crackable hash → Plaintext     |
+| **Golden Ticket**   | **Step 2 — AS-REP** (KDC Response)        | `krbtgt` hash (DA level)      | Forge any TGT indefinitely     |
+| **Silver Ticket**   | **Step 4 — TGS-REP** (KDC Response)       | Service account hash          | Forge TGS for specific service |
+| **Pass the Ticket** | **Step 2 — AS-REP** / **Step 5 — AP-REQ** | TGT or TGS from memory        | Authenticate as victim         |
+| **NTLM Relay**      | **NetNTLM** Authentication                | MITM Network position         | Access as victim (Real-time)   |
+| **LLMNR Poisoning** | **NetNTLM** Negotiation                   | Local network access          | Captured hash → Crack offline  |
 
 ---
 ---
