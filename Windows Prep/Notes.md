@@ -85,3 +85,35 @@ net use \\192.168.1.10\IPC$ "" /user:""
 
 ---
 ---
+# Can't we just login via winrm and then request TGS ? because we logged in ?
+
+Yes exactly — that is a completely valid path and honestly more common in practice:
+
+```
+Crack svc_mssql : Summer2024!
+→ evil-winrm -i DC_IP -u svc_mssql -p Summer2024!
+→ now you have a shell on the machine
+→ you ARE logged in as svc_mssql
+→ Windows automatically got you a TGT in the background
+→ you can now request TGS for anything from that session
+```
+
+When you log in via WinRM, RDP, psexec — Windows handles the entire Kerberos flow automatically. TGT is requested silently in the background the moment you authenticate. You never have to manually request it.
+
+---
+### So Why Did We Even Mention Requesting TGT Manually
+
+Manual TGT requests come up in specific scenarios:
+
+```
+You have creds but no remote access open (WinRM/RDP/SMB blocked)
+→ request TGT manually via Rubeus or impacket
+→ use that TGT for other Kerberos attacks like Pass the Ticket
+
+Or you are doing everything from your Linux attack box
+→ no Windows session available
+→ impacket tools handle TGT requesting manually under the hood
+```
+
+---
+---
