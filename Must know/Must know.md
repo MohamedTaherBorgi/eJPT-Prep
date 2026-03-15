@@ -744,3 +744,34 @@ The difference between `nc` and `nc -nv` is all about **speed** and **stealth**.
 
 ---
 ---
+# ``nmap -sn`` Vs ``ping``
+
+### 1. Protocol Diversity (The Biggest Factor)
+
+When you run a standard **ping**, your operating system sends an **ICMP Echo Request**. Many modern firewalls and Windows machines are configured to silently drop ICMP traffic.
+
+`nmap -sn` doesn't just rely on ICMP. By default (if you are running as root/sudo), it sends **four different types of probes** simultaneously to see if a host is alive:
+
+- **ICMP Echo Request** (The standard ping).
+    
+- **ICMP Timestamp Request** (Often allowed even when Echo is blocked).
+    
+- **TCP SYN to Port 443** (Checking for HTTPS).
+    
+- **TCP ACK to Port 80** (Checking for HTTP).
+
+If a machine blocks ICMP but has a web server open, `nmap -sn` will find it, whereas `ping` will say the host is dead.
+
+---
+### 2. ARP Discovery (On Local Networks) (<u>Shines Here</u>)
+
+If you are scanning a target on your **local subnet** (the same Wi-Fi or LAN), `nmap -sn` is incredibly stealthy because it switches to **ARP Scanning**.
+
+- Instead of sending "Layer 3" packets like ICMP that cross firewalls, it just asks the local switch: "Who has this MAC address?"
+    
+- This is almost impossible to block because the network _needs_ ARP to function.
+    
+- Standard `ping` still tries to use ICMP, which can be logged. ARP requests are rarely logged as "attacks" by security systems.
+
+---
+---
